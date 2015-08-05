@@ -1,3 +1,4 @@
+//deaddem is a faggot
 cutText ["Server Loading","BLACK OUT"];
 enableSaving[false,false];
 [] execVM "configuration\defines.sqf";
