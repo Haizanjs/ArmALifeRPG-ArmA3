@@ -3,7 +3,7 @@
 /*
 item0[] = {"Init",0,250,-532.457581,-170.236542,-442.457642,-120.236549,0.000000,"Init"};
 item1[] = {"Init_",4,218,-381.615723,-170.795731,-291.615814,-120.795753,0.000000,"Init" \n ""};
-item2[] = {"Start_Loop_",3,4346,-237.071213,-170.926193,-147.071213,-120.926193,0.000000,"Start Loop" \n ""};
+item2[] = {"Start_Loop_",3,250,-237.071213,-170.926193,-147.071213,-120.926193,0.000000,"Start Loop" \n ""};
 item3[] = {"Start_Delay_",3,250,-73.053009,-72.078934,16.947002,-22.078941,0.000000,"Start Delay" \n ""};
 item4[] = {"Timeout_",6,250,-72.800797,-8.317732,17.199203,41.682266,0.000000,"Timeout" \n ""};
 item5[] = {"Active_Plants",3,250,-73.713173,61.357697,16.286827,111.357697,0.000000,"Active Plants"};
@@ -22,7 +22,7 @@ item17[] = {"Cleanup_",2,250,-75.046600,431.180725,14.953388,481.180725,0.000000
 item18[] = {"_",8,218,-163.273926,476.945923,-73.273911,526.945923,0.000000,""};
 item19[] = {"Task_Force_Radio",2,250,-75.149139,529.270020,14.850864,579.270020,0.000000,"Task Force Radio Check" \n ""};
 item20[] = {"_",8,218,-160.520020,574.709351,-70.520020,624.709351,0.000000,""};
-item21[] = {"Loot_Dropping_",2,250,-69.641342,629.787354,20.358664,679.787354,0.000000,"Loot Dropping" \n ""};
+item21[] = {"Loot_Dropping_",2,4346,-69.641342,629.787354,20.358664,679.787354,0.000000,"Loot Dropping" \n ""};
 item22[] = {"_",8,218,-160.520020,682.752014,-70.520012,732.752014,0.000000,""};
 item23[] = {"Hunger____Thirst",2,250,-68.264389,733.699097,21.735615,783.699097,0.000000,"Hunger  / Thirst timer" \n ""};
 link0[] = {0,1};
@@ -49,8 +49,8 @@ link20[] = {20,21};
 link21[] = {21,22};
 link22[] = {22,23};
 link23[] = {23,6};
-globals[] = {0.000000,0,0,0,16777215,640,480,1,30,6316128,1,-1307.958252,623.901855,1002.419128,-250.604782,1403,910,1};
-window[] = {2,-1,-1,-1,-1,967,208,1648,208,3,1421};
+globals[] = {0.000000,0,0,0,16777215,640,480,1,30,6316128,1,-1293.684937,1030.973145,1396.719360,145.720718,1519,910,1};
+window[] = {2,-1,-1,-1,-1,904,156,1596,145,3,1537};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -84,7 +84,8 @@ class FSM
       name = "Start_Loop_";
       init = /*%FSM<STATEINIT""">*/"AM_ConnectionTime = 0;" \n
        "AM_CleanupLoop = 0;" \n
-       "AM_HungerLoop = 0;"/*%FSM</STATEINIT""">*/;
+       "AM_HungerLoop = 0;" \n
+       "AM_DeadLoop = false;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -314,18 +315,25 @@ class FSM
     {
       name = "Loot_Dropping_";
       init = /*%FSM<STATEINIT""">*/"if(player getVariable ""ACE_isUnconscious"") then {" \n
-       "	_myGuns = ""groundWeaponHolder"" createVehicle getpos player;" \n
-       "	{" \n
-       "		_myGuns addWeaponCargoGlobal [_x,1];	" \n
-       "	}foreAch weapons player;" \n
-       "	{" \n
-       "		_myGuns addWeaponCargoGlobal [_x,1];" \n
-       "	}foreach magazines player;" \n
-       "	{" \n
-       "		_invClass = _x select 0;" \n
-       "		_invAmount = _x select 1;" \n
-       "		[_invClass,str(_invAmount)] call AM_Core_DropItem;" \n
-       "	}forEach AM_Inventory;" \n
+       "	if(AM_DeadLoop)then{" \n
+       "" \n
+       "	}else{" \n
+       "	AM_DeadLoop = true;" \n
+       "		_myGuns = ""groundWeaponHolder"" createVehicle getpos player;" \n
+       "		{" \n
+       "			_myGuns addWeaponCargoGlobal [_x,1];	" \n
+       "		}foreAch weapons player;" \n
+       "		{" \n
+       "			_myGuns addWeaponCargoGlobal [_x,1];" \n
+       "		}foreach magazines player;" \n
+       "		{" \n
+       "			_invClass = _x select 0;" \n
+       "			_invAmount = _x select 1;" \n
+       "			[_invClass,str(_invAmount)] call AM_Core_DropItem;" \n
+       "		}forEach AM_Inventory;" \n
+       "	};" \n
+       "}else{" \n
+       "	AM_DeadLoop = false;" \n
        "};"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
@@ -347,7 +355,8 @@ class FSM
     class Hunger____Thirst
     {
       name = "Hunger____Thirst";
-      init = /*%FSM<STATEINIT""">*/"if(AM_HungerTimer == 690) then {" \n
+      init = /*%FSM<STATEINIT""">*/"if(AM_HungerLoop == 690) then {" \n
+       "	AM_HungerLoop = 0;" \n
        "	if (alive player) then {" \n
        "		AM_Hunger = AM_Hunger - 2;" \n
        "		AM_Thirst = AM_Thirst - 2;" \n
