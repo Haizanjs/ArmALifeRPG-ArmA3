@@ -34,14 +34,14 @@ AM_Core_HandleDamage = {
 		_unit setVariable ["AM_MyInjuries",_currentInjuries, true];
 
 	};
-	if(_ammo == "26_cartridge" || _ammo == "prpl_B_12Gauge_Slug")exitWith{ 
+	if(_ammo == "26_taser" || _ammo == "prpl_B_12Gauge_Slug")exitWith{ 
 	// Taser
 		_unit setDamage 0;
 		_nil = [] spawn {
-			[[_unit,AM_ANIMSTATES_DEAD],"AM_Core_Animate",true] call BIS_fnc_MP;
-			_unit setVariable ["AM_Disabled",true,true];
+			[[player,AM_ANIMSTATES_DEAD],"AM_Core_Animate",true] call BIS_fnc_MP;
+			player setVariable ["AM_Disabled",true,true];
 			sleep 5;
-			_unit setVariable ["AM_Disabled",false,true];
+			player setVariable ["AM_Disabled",false,true];
 		};
 	};
 };
