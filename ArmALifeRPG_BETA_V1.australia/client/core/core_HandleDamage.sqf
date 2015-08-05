@@ -38,10 +38,10 @@ AM_Core_HandleDamage = {
 	// Taser
 		_unit setDamage 0;
 		_nil = [] spawn {
-			[[player,AM_ANIMSTATES_DEAD],"AM_Core_Animate",true] call BIS_fnc_MP;
-			player setVariable ["AM_Disabled",true,true];
+			[[_unit,AM_ANIMSTATES_DEAD],"AM_Core_Animate",true] call BIS_fnc_MP;
+			_unit setVariable ["AM_Disabled",true,true];
 			sleep 5;
-			player setVariable ["AM_Disabled",false,true];
+			_unit setVariable ["AM_Disabled",false,true];
 		};
 	};
 };
