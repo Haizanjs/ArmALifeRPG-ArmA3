@@ -1,0 +1,383 @@
+/*%FSM<COMPILE "compile.cfg, client_loop">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Init",0,250,-532.457581,-170.236542,-442.457642,-120.236549,0.000000,"Init"};
+item1[] = {"Init_",4,218,-381.615723,-170.795731,-291.615814,-120.795753,0.000000,"Init" \n ""};
+item2[] = {"Start_Loop_",3,4346,-237.071213,-170.926193,-147.071213,-120.926193,0.000000,"Start Loop" \n ""};
+item3[] = {"Start_Delay_",3,250,-73.053009,-72.078934,16.947002,-22.078941,0.000000,"Start Delay" \n ""};
+item4[] = {"Timeout_",6,250,-72.800797,-8.317732,17.199203,41.682266,0.000000,"Timeout" \n ""};
+item5[] = {"Active_Plants",3,250,-73.713173,61.357697,16.286827,111.357697,0.000000,"Active Plants"};
+item6[] = {"Restart_",8,218,-405.404297,732.545471,-315.404388,782.545288,0.000000,"Restart" \n ""};
+item7[] = {"",7,210,-364.601685,163.891571,-356.601685,171.891571,0.000000,""};
+item8[] = {"",7,210,-363.394958,-51.098335,-355.394958,-43.098335,0.000000,""};
+item9[] = {"True_",8,218,-72.559601,-171.636108,17.440168,-121.636017,0.000000,"True" \n ""};
+item10[] = {"_",8,218,-173.648041,90.114738,-83.648041,140.114746,0.000000,""};
+item11[] = {"Factory_Items_",2,250,-72.147682,137.125427,17.852325,187.125427,0.000000,"Factory Items" \n ""};
+item12[] = {"_",8,218,-171.083771,187.349426,-81.083832,237.349411,0.000000,""};
+item13[] = {"Server_Variables",2,250,-76.230820,239.533585,28.968496,284.856903,0.000000,"Server Variables" \n ""};
+item14[] = {"_",8,218,-163.760513,284.111267,-73.760513,334.111267,0.000000,""};
+item15[] = {"Blinded_",2,250,-73.417007,332.043823,16.583008,382.043823,0.000000,"Blinded" \n ""};
+item16[] = {"_",8,218,-166.979858,382.971893,-76.979843,432.971893,0.000000,""};
+item17[] = {"Cleanup_",2,250,-75.046600,431.180725,14.953388,481.180725,0.000000,"Cleanup" \n ""};
+item18[] = {"_",8,218,-163.273926,476.945923,-73.273911,526.945923,0.000000,""};
+item19[] = {"Task_Force_Radio",2,250,-75.149139,529.270020,14.850864,579.270020,0.000000,"Task Force Radio Check" \n ""};
+item20[] = {"_",8,218,-160.520020,574.709351,-70.520020,624.709351,0.000000,""};
+item21[] = {"Loot_Dropping_",2,250,-69.641342,629.787354,20.358664,679.787354,0.000000,"Loot Dropping" \n ""};
+item22[] = {"_",8,218,-160.520020,682.752014,-70.520012,732.752014,0.000000,""};
+item23[] = {"Hunger____Thirst",2,250,-68.264389,733.699097,21.735615,783.699097,0.000000,"Hunger  / Thirst timer" \n ""};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,9};
+link3[] = {3,4};
+link4[] = {4,5};
+link5[] = {5,10};
+link6[] = {6,7};
+link7[] = {7,8};
+link8[] = {8,3};
+link9[] = {9,3};
+link10[] = {10,11};
+link11[] = {11,12};
+link12[] = {12,13};
+link13[] = {13,14};
+link14[] = {14,15};
+link15[] = {15,16};
+link16[] = {16,17};
+link17[] = {17,18};
+link18[] = {18,19};
+link19[] = {19,20};
+link20[] = {20,21};
+link21[] = {21,22};
+link22[] = {22,23};
+link23[] = {23,6};
+globals[] = {0.000000,0,0,0,16777215,640,480,1,30,6316128,1,-1307.958252,623.901855,1002.419128,-250.604782,1403,910,1};
+window[] = {2,-1,-1,-1,-1,967,208,1648,208,3,1421};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "client_loop";
+  class States
+  {
+    /*%FSM<STATE "Init">*/
+    class Init
+    {
+      name = "Init";
+      init = /*%FSM<STATEINIT""">*/"AM_ConnectionTime = 0;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Init_">*/
+        class Init_
+        {
+          priority = 0.000000;
+          to="Start_Loop_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!isnil ""bis_fnc_init"" && AM_Session_LoggedIn && AM_DEFINES_DONE == 1"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Start_Loop_">*/
+    class Start_Loop_
+    {
+      name = "Start_Loop_";
+      init = /*%FSM<STATEINIT""">*/"AM_ConnectionTime = 0;" \n
+       "AM_CleanupLoop = 0;" \n
+       "AM_HungerLoop = 0;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "True_">*/
+        class True_
+        {
+          priority = 0.000000;
+          to="Start_Delay_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Start_Delay_">*/
+    class Start_Delay_
+    {
+      name = "Start_Delay_";
+      init = /*%FSM<STATEINIT""">*/"_set_time = time;" \n
+       "AM_ConnectionTime = AM_ConnectionTime + 1;" \n
+       "AM_CleanupLoop = AM_CleanupLoop + 1;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Timeout_">*/
+        class Timeout_
+        {
+          priority = 0.000000;
+          to="Active_Plants";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"time >= _set_time + 1;"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Active_Plants">*/
+    class Active_Plants
+    {
+      name = "Active_Plants";
+      init = /*%FSM<STATEINIT""">*/"{" \n
+       "	_plant = _x;" \n
+       "	_plantprogress = _plant select 1;" \n
+       "	_plantprogress = _plantprogress + 1;" \n
+       "	_plant set[1,_plantprogress];" \n
+       "	AM_MyPlants set [_foreachindex,_plant];" \n
+       "}forEach AM_MyPlants;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "_">*/
+        class _
+        {
+          priority = 0.000000;
+          to="Factory_Items_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"True"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Factory_Items_">*/
+    class Factory_Items_
+    {
+      name = "Factory_Items_";
+      init = /*%FSM<STATEINIT""">*/"if(AM_FactoryActive)then{" \n
+       "{" \n
+       "	_f = _x;" \n
+       "	_fItem = _x select 0;" \n
+       "	_fAmount = _x select 1;" \n
+       "	_fProgress = _x select 2;" \n
+       "" \n
+       "	_factoryitems_index = [_fItem] call AM_Core_GetFactoryItemArray;" \n
+       "	_factoryitems = AM_Factoryitems select _factoryitems_index;" \n
+       "	_factoryprogressadd = _factoryitems select 2;" \n
+       "	_fProgress = _fProgress + _factoryprogressadd;" \n
+       "	if(_fProgress >= 100) then {_fProgress= 100};	" \n
+       "	AM_MyFactory set[_forEachIndex, [_fItem,_fAmount,_fProgress]];" \n
+       "}forEach AM_MyFactory;" \n
+       "" \n
+       "if(AM_FactoryOpen)then{" \n
+       "	 lbClear 1500;" \n
+       "	{" \n
+       "		 lbAdd[1500,format[""[%1%2] %3 x%4"",(_x select 2),""%"",[(_x select 0), ""name""] call AM_Inventory_Info, (_x select 1)]];" \n
+       " 	}forEach AM_Myfactory;" \n
+       "};" \n
+       "" \n
+       "" \n
+       "};"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "_">*/
+        class _
+        {
+          priority = 0.000000;
+          to="Server_Variables";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Server_Variables">*/
+    class Server_Variables
+    {
+      name = "Server_Variables";
+      init = /*%FSM<STATEINIT""">*/"if(isNil ""AM_SERVERVAR_AddonSecurity"" || !AM_ServerVar_setup)then{" \n
+       "	[player] call AM_SetupVars;" \n
+       "};"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "_">*/
+        class _
+        {
+          priority = 0.000000;
+          to="Blinded_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Blinded_">*/
+    class Blinded_
+    {
+      name = "Blinded_";
+      init = /*%FSM<STATEINIT""">*/"_blinded = player getVariable ""AM_Blinded"";" \n
+       "" \n
+       "if(player getVariable ""AM_Blinded"") then{" \n
+       "" \n
+       "	if(!AM_IsBlinded)then{" \n
+       "		AM_IsBlinded=true;" \n
+       "		cutText[""You are blinded!"",""BLACK""];" \n
+       "	}" \n
+       "}else{" \n
+       "	AM_IsBlinded=false;" \n
+       "	cutText["""",""PLAIN""];" \n
+       "};"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "_">*/
+        class _
+        {
+          priority = 0.000000;
+          to="Cleanup_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Cleanup_">*/
+    class Cleanup_
+    {
+      name = "Cleanup_";
+      init = /*%FSM<STATEINIT""">*/"if(AM_CleanupLoop >= 10) then{" \n
+       "	AM_CleanupLoop = 0;" \n
+       "	" \n
+       "	{" \n
+       "		deleteVehicle _x;" \n
+       "	}forEach allDead;" \n
+       "};" \n
+       "" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "_">*/
+        class _
+        {
+          priority = 0.000000;
+          to="Task_Force_Radio";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Task_Force_Radio">*/
+    class Task_Force_Radio
+    {
+      name = "Task_Force_Radio";
+      init = /*%FSM<STATEINIT""">*/"if(!isMultiplayer)exitWith{};" \n
+       "" \n
+       "_tsChannelName = ([] call TFAR_fnc_GetTeamspeakChannelName);" \n
+       "" \n
+       "if(!(_tsChannelName == ""TaskForceRadio"")) then{" \n
+       "	player enableSimulation false;" \n
+       "	systemChat ""Task Force Radio not connected!"";" \n
+       "}else{" \n
+       "	player enableSimulation true;" \n
+       "};"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "_">*/
+        class _
+        {
+          priority = 0.000000;
+          to="Loot_Dropping_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Loot_Dropping_">*/
+    class Loot_Dropping_
+    {
+      name = "Loot_Dropping_";
+      init = /*%FSM<STATEINIT""">*/"if(player getVariable ""ACE_isUnconscious"") then {" \n
+       "	_myGuns = ""groundWeaponHolder"" createVehicle getpos player;" \n
+       "	{" \n
+       "		_myGuns addWeaponCargoGlobal [_x,1];	" \n
+       "	}foreAch weapons player;" \n
+       "	{" \n
+       "		_myGuns addWeaponCargoGlobal [_x,1];" \n
+       "	}foreach magazines player;" \n
+       "	{" \n
+       "		_invClass = _x select 0;" \n
+       "		_invAmount = _x select 1;" \n
+       "		[_invClass,str(_invAmount)] call AM_Core_DropItem;" \n
+       "	}forEach AM_Inventory;" \n
+       "};"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "_">*/
+        class _
+        {
+          priority = 0.000000;
+          to="Hunger____Thirst";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Hunger____Thirst">*/
+    class Hunger____Thirst
+    {
+      name = "Hunger____Thirst";
+      init = /*%FSM<STATEINIT""">*/"if(AM_HungerTimer == 690) then {" \n
+       "	if (alive player) then {" \n
+       "		AM_Hunger = AM_Hunger - 2;" \n
+       "		AM_Thirst = AM_Thirst - 2;" \n
+       "			if (AM_Hunger < 2) then {player setdamage 1;[[[format[""%1 has died of hunger.Don't let this happen to you aswell!"",name player]],{call AM_Core_Message}],""BIS_fnc_Spawn"",true] call BIS_fnc_MP;};" \n
+       "			if (AM_Thirst < 2) exitWith {player setdamage 1;[[[format[""%1 has died of thrist.Don't let this happen to you aswell!"",name player]],{call AM_Core_Message}],""BIS_fnc_Spawn"",true] call BIS_fnc_MP;};" \n
+       "		} else {" \n
+       "			hint ""You are dead!"";" \n
+       "		};" \n
+       "};"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Restart_">*/
+        class Restart_
+        {
+          priority = 0.000000;
+          to="Start_Delay_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="Init";
+  finalStates[] =
+  {
+
+  };
+};
+/*%FSM</COMPILE>*/

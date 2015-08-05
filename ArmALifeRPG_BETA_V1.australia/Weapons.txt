@@ -1,0 +1,15 @@
+/*---------------------------------------------------------------------------
+							 	Company ShopInfo
+								by DEADdem
+## DESCRIPTION:
+ 	Grabs information on a company owned shop
+## UPDATES:
+  001:
+  Creation
+---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------	
+							Copyright (c) ArmALifeRPG
+All function names, features and/or content prefixed with "AM","ALR","ALRPG",
+"AL" are property of ArmALifeRPG. unauthorized usage of these files is strictly
+prohibited							
+---------------------------------------------------------------------------*/	

@@ -1,0 +1,3 @@
+prpl_benelli_pgs - Shotgun
+prpl_8Rnd_12Gauge_Pellets - Shotgun Pellets
+

@@ -1,0 +1,23 @@
+author="DEADdem, Taliban, Kangaro0 and Idris";
+OnLoadName = "ArmALifeRPG.com";
+OnLoadMission = "Life Mission Script";
+disabledAI = 1;
+enableDebugConsole = 1;
+joinUnassigned = 1;
+respawnDialog = 0;
+#include "configuration\defines.hpp"
+#include "dialogs\policemenu.hpp"
+#include "dialogs\interactionmenu.hpp"
+#include "dialogs\inventory.hpp"
+#include "dialogs\admin.hpp"
+class Header
+{
+	gameType = RPG;
+	minPlayers = 1;
+	maxPlayers = 75;
+};
+class RscTitles {
+	#include "dialogs\hud.hpp"
+};
+respawn="BASE";
+respawndelay = 0;

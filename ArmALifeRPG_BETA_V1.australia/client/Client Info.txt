@@ -1,0 +1,35 @@
+-- Module folders
+These folders are organised into their necessary Modules. Core and Inventory are base functions which may be used accross features
+
+-- Formatting
+
+Files should be organised:
+module_FncName.sqf
+Folders should be organsed:
+modulename
+Function should be organised:
+TAG_Module_FncName
+
+Header:
+/*---------------------------------------------------------------------------
+				Function Title
+	   		       by Your Name Here
+				
+## DESCRIPTION:
+	Description of function
+## UPDATES:
+  001:
+  Creation
+  002:
+Updates you have made to it
+---------------------------------------------------------------------------*/
+
+Footer
+/*---------------------------------------------------------------------------	
+			Copyright (c) ArmALifeRPG
+All function names, features and/or content prefixed with "AM","ALR","ALRPG",
+"AL","YOUR TAG" are property of ArmALifeRPG. unauthorized usage of these files is strictly
+prohibited							
+---------------------------------------------------------------------------*/	
+
+Do not supply information on calling the function
