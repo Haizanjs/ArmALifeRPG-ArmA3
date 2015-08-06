@@ -38,3 +38,4 @@ waitUntil{uniform player == "U_C_Poloshirt_stripped"};
 _unit = player;
 _unit addUniform "jamie_armaliferpg";
 player addRating 99999999;
+player addEventHandler["handleDamage",{_this call AM_Core_HandleDamage;}];

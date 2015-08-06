@@ -7,41 +7,48 @@
   001:
 	Creation
 ---------------------------------------------------------------------------*/	
-AM_Core_HandleDamage = {
-	_unit = [_this,0,objNull,[objNull]] call BIS_fnc_Param;
-	_selection = _this select 1;
-	_damage = _this select 2;
-	_source = _this select 3;
-	_ammo = _this select 4;
-	waitUntil {!AM_HandleDamageLock}; // In case of getting shot with automatic rifles or some shit	
-	if(isNil "_ammo")then{
-		_ammo = "";
-	};
-	if(_ammo != "" and _ammo != "26_cartridge") exitWith { // Bullet
-		_currentInjuries = player getVariable "AM_MyInjuries";
-		_currentInjuries set[count(_currentInjuries), "bullet"];
-		if(_selection == "legs")then{
-			_random = round(random(100));
-			if(_random > 75)then { // 75% Change of severing artery in leg
-				_currentInjuries set[count(_currentInjuries), "severed_artery"];
-			};
-		};
-		player setVariable ["AM_MyInjuries",_currentInjuries,true];
-	};
-	if(_ammo == "")exitWith{ // Blunt force
-		_currentInjuries = _unit getVariable "AM_MyInjuries";
-		_currentInjuries set[count(_currentInjuries),"blunt"];
-		_unit setVariable ["AM_MyInjuries",_currentInjuries, true];
 
-	};
-	if(_ammo == "26_taser" || _ammo == "prpl_B_12Gauge_Slug")exitWith{ 
-	// Taser
-		_unit setDamage 0;
-		_nil = [] spawn {
-			[[player,AM_ANIMSTATES_DEAD],"AM_Core_Animate",true] call BIS_fnc_MP;
-			player setVariable ["AM_Disabled",true,true];
-			sleep 5;
-			player setVariable ["AM_Disabled",false,true];
-		};
-	};
+AM_Core_HandleDamage = {
+    private ["_unit","_selection","_damage","_source","_ammo"];
+        _unit = _this select 0;
+        _selection = _this select 1;
+        _damage = _this select 2;
+        _source = _this select 3;
+        _ammo = _this select 4;
+        _classnames = ["26_cartridge","prpl_B_12Gauge_Slug"];
+    if(!isNull _source) then {
+        if(_source != _unit) then {
+        _damage = false;
+            if(_ammo in _classnames)exitWith{ 
+                [_unit,_source] spawn AM_Core_Taser;
+            };
+        };
+    };
+    _damage;
+};
+
+AM_Core_Taser = {
+private ["_unit","_shooter"];
+_unit = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
+_shooter = [_this,1,Objnull,[Objnull]] call BIS_fnc_param;
+_myGuns = "groundWeaponHolder" createVehicle getpos player;
+    if(_shooter isKindOf "Man" && alive player) then
+    {
+        {
+            _myGuns addWeaponCargoGlobal [_x,1];
+        }foreach magazines player;
+        _unit allowdamage false;
+        [[_unit,AM_ANIMSTATES_DEAD],"AM_Core_Animate",true] call BIS_fnc_MP;
+        _unit setVariable ["AM_Disabled",true,true];
+        disableUserInput true;
+        titleText ["You have been tased!","BLACK"];
+        sleep 5;
+        _unit allowdamage true;
+        disableUserInput false;
+        [[_unit,""],"AM_Core_Animate",true] call BIS_fnc_MP;
+        _unit setVariable ["AM_Disabled",false,true];
+        titleText ["","PLAIN"];
+        player setvariable ["Pain",false,true];
+        player setvariable ["ACE_isUnconscious",false,true];
+    };
 };
