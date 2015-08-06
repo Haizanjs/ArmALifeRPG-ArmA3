@@ -169,9 +169,7 @@ if(isMultiplayer)then{
 }else{
 	player setpos getMarkerPos "spawn_player";	
 };
-//[] execVM "client\core\c_loop.sqf";
-//[] execVM "client\core\c_loopStatus.sqf";
-//[] execVM "client\core\c_loopHunger.sqf";
+[] execVM "client\core\c_loop.sqf";
 call AM_Core_Skills;
 AM_SetupVars = {};
 /*---------------------------------------------------------------------------
