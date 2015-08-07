@@ -71,7 +71,6 @@ AM_network_receivestats = {
 	AM_Thirst = 100;
 	player setPos getMarkerPos "spawn_player";
 	titleText ["Player Loaded", "PLAIN"];
-	[] execVM "client\core\c_looptask.sqf";
 	};
 	waitUntil{!isNil "AM_Core_ReformatInventory"};
 			for[{_i=0},{_i<100},{_i = _i + 1}]do{
