@@ -442,7 +442,7 @@ class AM_InteractionMenu{
 		y = 2 * GUI_GRID_H + GUI_GRID_Y;
 		w = 4 * GUI_GRID_W;
 		h = 3 * GUI_GRID_H;
-		action="[] call AM_Core_ForceIntoVehicle";
+		action="[cursorTarget] call AM_Core_ForceIntoVehicle";
 	};
 	class RscButton_1614: RscButtonHidden
 	{

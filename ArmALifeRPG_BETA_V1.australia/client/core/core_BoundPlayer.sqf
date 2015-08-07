@@ -26,9 +26,11 @@ AM_Core_BoundPlayer = {
 		[["You have been bounded by another player", AM_COLGROUP_WHITE],"AM_Core_Message",owner(AM_interacttarget)] call BIS_fnc_MP;	
 		["You have bounded this player", AM_COLGROUP_WHITE] call AM_Core_Message;
 		AM_interacttarget setVariable["AM_Cuffed",true,true];
-		while{(AM_interacttarget getVariable "AM_Cuffed")}do{
+		_players = nearestObjects[getPosATL player,["Man"],10] select 0;
+		while{(AM_interacttarget getVariable "AM_Cuffed" || _players getVariable "AM_Cuffed")}do{
 			[[AM_interacttarget,AM_ANIMSTATES_Cuffed],"AM_Core_Animate",true,true] call BIS_fnc_MP;	
 			sleep 16;
+			[[AM_interacttarget,AM_ANIMSTATES_Cuffed],"AM_Core_Animate",true,true] call BIS_fnc_MP;	
 		};
 		
 	};
