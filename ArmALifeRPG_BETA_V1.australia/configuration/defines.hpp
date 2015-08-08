@@ -1033,22 +1033,35 @@ class RscButtonHidden:RscButton{
 		0,
 		0
 	};
-};
-class RscEditHidden:RscEdit{
-	colorText[] = 
+	soundEnter[] = 
 	{
-		1,
-		1,
-		1,
+		"\A3\ui_f\data\sound\RscButton\soundEnter",
+		0.09,
 		1
 	};
-	colorDisabled[] = 
+	soundPush[] = 
 	{
-		1,
-		1,
-		1,
-		0
+		"\A3\ui_f\data\sound\RscButton\soundPush",
+		0.09,
+		1
 	};
+	soundClick[] = 
+	{
+		"\A3\ui_f\data\sound\RscButton\soundClick",
+		0.09,
+		1
+	};
+	soundEscape[] = 
+	{
+		"\A3\ui_f\data\sound\RscButton\soundEscape",
+		0.09,
+		1
+	};
+};
+
+
+class RscListBoxHidden:RscListBox{
+	colorText[] = {0,0,0,1};
 	colorBackground[] = 
 	{
 		0,
@@ -1056,21 +1069,11 @@ class RscEditHidden:RscEdit{
 		0,
 		0
 	};
-	colorBackgroundDisabled[] = 
-	{
-		0,
-		0,
-		0,
-		0
-	};
-	colorBackgroundActive[] = 
-	{
-		0,
-		0,
-		0,
-		0
-	};
-	colorFocused[] = 
+};
+
+class RscListBoxHiddenWhite:RscListBox{
+	colorText[] = {1,1,1,1};
+	colorBackground[] = 
 	{
 		0,
 		0,
@@ -1078,6 +1081,7 @@ class RscEditHidden:RscEdit{
 		0
 	};
 };
+
 class RscShortcutButton
 {
 	deletable = 0;

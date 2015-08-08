@@ -70,182 +70,191 @@ class AM_Ticket{
 
 	controls[]=
 	{
-		IGUIBack_2200,
+		RscPicture_1200,
 		RscButton_1600,
-		RscText_1000,
 		RscEdit_1400,
 		RscEdit_1401
 	};
-	////////////////////////////////////////////////////////
-	// GUI EDITOR OUTPUT START (by DEADdem, v1.063, #Wogyqu)
-	////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+// GUI EDITOR OUTPUT START (by Jamie, v1.063, #Miqisa)
+////////////////////////////////////////////////////////
 
-	class IGUIBack_2200: IGUIBack
-	{
-		idc = 2200;
-		x = 11 * GUI_GRID_W + GUI_GRID_X;
-		y = 1 * GUI_GRID_H + GUI_GRID_Y;
-		w = 21 * GUI_GRID_W;
-		h = 16 * GUI_GRID_H;
-	};
-	class RscButton_1600: RscButton
-	{
-		idc = 1600;
-		text = "Issue"; //--- ToDo: Localize;
-		x = 17 * GUI_GRID_W + GUI_GRID_X;
-		y = 13.5 * GUI_GRID_H + GUI_GRID_Y;
-		w = 9 * GUI_GRID_W;
-		h = 2.5 * GUI_GRID_H;
-		action="[ctrlText 1400,ctrlText 1401,player] call AM_PD_IssueTicket";
-	};
-	class RscText_1000: RscText
-	{
-		idc = 1000;
-		text = "Issue Ticket"; //--- ToDo: Localize;
-		x = 18.5 * GUI_GRID_W + GUI_GRID_X;
-		y = 2 * GUI_GRID_H + GUI_GRID_Y;
-		w = 8.5 * GUI_GRID_W;
-		h = 2.5 * GUI_GRID_H;
-	};
-	class RscEdit_1400: RscEdit
-	{
-		idc = 1400;
-		text = "Enter Ticket Reason..."; //--- ToDo: Localize;
-		x = 12 * GUI_GRID_W + GUI_GRID_X;
-		y = 6 * GUI_GRID_H + GUI_GRID_Y;
-		w = 19 * GUI_GRID_W;
-		h = 2 * GUI_GRID_H;
-	};
-	class RscEdit_1401: RscEdit
-	{
-		idc = 1401;
-		text = "Enter Ticket Price"; //--- ToDo: Localize;
-		x = 12 * GUI_GRID_W + GUI_GRID_X;
-		y = 9 * GUI_GRID_H + GUI_GRID_Y;
-		w = 19 * GUI_GRID_W;
-		h = 2 * GUI_GRID_H;
-	};
+class RscPicture_1200: RscPicture
+{
+	idc = 1200;
+	text = "\ALRPG_Client\PD\Ticket.paa";
+	x = -1 * GUI_GRID_W + GUI_GRID_X;
+	y = -3.5 * GUI_GRID_H + GUI_GRID_Y;
+	w = 42 * GUI_GRID_W;
+	h = 31.5 * GUI_GRID_H;
+};
+class RscButton_1600: RscButtonHidden
+{
+	idc = 1600;
+	action = "[ctrlText 1400,ctrlText 1401,player] call AM_PD_IssueTicket";
+
+	x = 15.5 * GUI_GRID_W + GUI_GRID_X;
+	y = 20 * GUI_GRID_H + GUI_GRID_Y;
+	w = 9 * GUI_GRID_W;
+	h = 1.5 * GUI_GRID_H;
+};
+class RscEdit_1400: RscEdit
+{
+	idc = 1400;
+
+	text = "Ticket Reason"; //--- ToDo: Localize;
+	x = 7.5 * GUI_GRID_W + GUI_GRID_X;
+	y = 8.5 * GUI_GRID_H + GUI_GRID_Y;
+	w = 25 * GUI_GRID_W;
+	h = 1.5 * GUI_GRID_H;
+};
+class RscEdit_1401: RscEdit
+{
+	idc = 1401;
+
+	text = "Ticket Price"; //--- ToDo: Localize;
+	x = 7.5 * GUI_GRID_W + GUI_GRID_X;
+	y = 12.5 * GUI_GRID_H + GUI_GRID_Y;
+	w = 25 * GUI_GRID_W;
+	h = 1.5 * GUI_GRID_H;
+};
+////////////////////////////////////////////////////////
+// GUI EDITOR OUTPUT END
+////////////////////////////////////////////////////////
+
 
 };
 class AM_PolicePC {
 	idd=-1;
 	controls[]=
 	{
-		IGUIBack_2200,
+		RscPicture_1200,
 		RscButton_1600,
 		RscButton_1601,
 		RscButton_1602,
 		RscButton_1603
 	};
+////////////////////////////////////////////////////////
+// GUI EDITOR OUTPUT START (by Jamie, v1.063, #Doxumy)
+////////////////////////////////////////////////////////
 
-	class IGUIBack_2200: IGUIBack
-	{
-		idc = 2200;
-		x = 11 * GUI_GRID_W + GUI_GRID_X;
-		y = 2 * GUI_GRID_H + GUI_GRID_Y;
-		w = 19 * GUI_GRID_W;
-		h = 21.5 * GUI_GRID_H;
-	};
-	class RscButton_1600: RscButton
-	{
-		idc = 1600;
-		text = "Vehicle Database"; //--- ToDo: Localize;
-		x = 12 * GUI_GRID_W + GUI_GRID_X;
-		y = 3 * GUI_GRID_H + GUI_GRID_Y;
-		w = 17 * GUI_GRID_W;
-		h = 3 * GUI_GRID_H;
-		action="closeDialog 0;if(!createDialog ""AM_PlateLookup"")exitWith{};";
-	};
-	class RscButton_1601: RscButton
-	{
-		idc = 1601;
-		text = "Persons Database"; //--- ToDo: Localize;
-		x = 12 * GUI_GRID_W + GUI_GRID_X;
-		y = 7 * GUI_GRID_H + GUI_GRID_Y;
-		w = 17 * GUI_GRID_W;
-		h = 3 * GUI_GRID_H;
-		action="closeDialog 0;if(!createDialog ""AM_PoliceDB"")exitWith{};";
-	};
-	class RscButton_1602: RscButton
-	{
-		idc = 1602;
-		text = "Create Warrant"; //--- ToDo: Localize;
-		x = 12 * GUI_GRID_W + GUI_GRID_X;
-		y = 14 * GUI_GRID_H + GUI_GRID_Y;
-		w = 17 * GUI_GRID_W;
-		h = 3 * GUI_GRID_H;
-		action="closedialog 0; [] call AM_PD_OpenWarrantsSubmit;";
-	};
-	class RscButton_1603: RscButton
-	{
-		idc = 1603;
-		text = "Warrant Database"; //--- ToDo: Localize;
-		x = 12 * GUI_GRID_W + GUI_GRID_X;
-		y = 18 * GUI_GRID_H + GUI_GRID_Y;
-		w = 17 * GUI_GRID_W;
-		h = 3 * GUI_GRID_H;
-		action="closeDialog 0;if(!createDialog ""AM_WarrantsMenu"")exitWith{};";
+class RscButton_1600: RscButtonHidden
+{
+	idc = 1600;
+	action = "closeDialog 0;if(!createDialog 'AM_PlateLookup')exitWith{};";
 
-	};
+	x = 20.55 * GUI_GRID_W + GUI_GRID_X;
+	y = 5.37 * GUI_GRID_H + GUI_GRID_Y;
+	w = 13.5 * GUI_GRID_W;
+	h = 2.5 * GUI_GRID_H;
+	colorBackground[] = {0,0,0,0};
+};
+class RscButton_1601: RscButtonHidden
+{
+	idc = 1601;
+	action = "closeDialog 0;if(!createDialog 'AM_PoliceDB')exitWith{};";
+
+	x = 20.59 * GUI_GRID_W + GUI_GRID_X;
+	y = 8.55 * GUI_GRID_H + GUI_GRID_Y;
+	w = 13.5 * GUI_GRID_W;
+	h = 2.5 * GUI_GRID_H;
+	colorBackground[] = {0,0,0,0};
+};
+class RscButton_1602: RscButtonHidden
+{
+	idc = 1602;
+	action = "closedialog 0; [] call AM_PD_OpenWarrantsSubmit;";
+
+	x = 20.55 * GUI_GRID_W + GUI_GRID_X;
+	y = 14.54 * GUI_GRID_H + GUI_GRID_Y;
+	w = 13.5 * GUI_GRID_W;
+	h = 2.5 * GUI_GRID_H;
+	colorBackground[] = {0,0,0,0};
+};
+class RscButton_1603: RscButtonHidden
+{
+	idc = 1603;
+	action = "closeDialog 0;if(!createDialog 'AM_WarrantsMenu')exitWith{};";
+
+	x = 20.55 * GUI_GRID_W + GUI_GRID_X;
+	y = 11.45 * GUI_GRID_H + GUI_GRID_Y;
+	w = 13.5 * GUI_GRID_W;
+	h = 2.5 * GUI_GRID_H;
+	colorBackground[] = {0,0,0,0};
+};
+class RscPicture_1200: RscPicture
+{
+	idc = 1200;
+
+	text = "\ALRPG_Client\PD\Home.paa";
+	x = -1 * GUI_GRID_W + GUI_GRID_X;
+	y = -3.5 * GUI_GRID_H + GUI_GRID_Y;
+	w = 42 * GUI_GRID_W;
+	h = 31.5 * GUI_GRID_H;
+};
+////////////////////////////////////////////////////////
+// GUI EDITOR OUTPUT END
+////////////////////////////////////////////////////////
+
 
 };
 class AM_PoliceDB{
 	idd=-1;
 	controls[]=
 	{
-		IGUIBack_2201,
+		RscPicture_1200,
 		RscButton_1600,
 		RscEdit_1400,
-		IGUIBack_2200,
 		RscListbox_1500
 	};
-	////////////////////////////////////////////////////////
-	// GUI EDITOR OUTPUT START (by DEADdem, v1.063, #Myseju)
-	////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+// GUI EDITOR OUTPUT START (by Jamie, v1.063, #Hibybo)
+////////////////////////////////////////////////////////
 
-	class IGUIBack_2201: IGUIBack
-	{
-		idc = 2201;
-		x = -6 * GUI_GRID_W + GUI_GRID_X;
-		y = 1 * GUI_GRID_H + GUI_GRID_Y;
-		w = 16 * GUI_GRID_W;
-		h = 5.5 * GUI_GRID_H;
-	};
-	class RscButton_1600: RscButton
-	{
-		idc = 1600;
-		text = "Run Search"; //--- ToDo: Localize;
-		x = -4.5 * GUI_GRID_W + GUI_GRID_X;
-		y = 4 * GUI_GRID_H + GUI_GRID_Y;
-		w = 13 * GUI_GRID_W;
-		h = 2 * GUI_GRID_H;
-		action="[ctrlText 1400] call AM_PD_GetPoliceDBInfo";
-	};
-	class RscEdit_1400: RscEdit
-	{
-		idc = 1400;
-		text = "Suspect Name"; //--- ToDo: Localize;
-		x = -4.5 * GUI_GRID_W + GUI_GRID_X;
-		y = 2 * GUI_GRID_H + GUI_GRID_Y;
-		w = 13 * GUI_GRID_W;
-		h = 1.5 * GUI_GRID_H;
-	};
-	class IGUIBack_2200: IGUIBack
-	{
-		idc = 2200;
-		x = 11 * GUI_GRID_W + GUI_GRID_X;
-		y = 0 * GUI_GRID_H + GUI_GRID_Y;
-		w = 21 * GUI_GRID_W;
-		h = 25 * GUI_GRID_H;
-	};
-	class RscListbox_1500: RscListbox
-	{
-		idc = 1500;
-		x = 12 * GUI_GRID_W + GUI_GRID_X;
-		y = 2 * GUI_GRID_H + GUI_GRID_Y;
-		w = 19 * GUI_GRID_W;
-		h = 22 * GUI_GRID_H;
-	};
+class RscPicture_1200: RscPicture
+{
+	idc = 1200;
+
+	text = "\ALRPG_Client\PD\PD_Person.paa";
+	x = -1 * GUI_GRID_W + GUI_GRID_X;
+	y = -3.5 * GUI_GRID_H + GUI_GRID_Y;
+	w = 42 * GUI_GRID_W;
+	h = 31.5 * GUI_GRID_H;
+};
+class RscButton_1600: RscButtonHidden
+{
+	idc = 1600;
+	action = "[ctrlText 1400] call AM_PD_GetPoliceDBInfo";
+
+	x = 30.2 * GUI_GRID_W + GUI_GRID_X;
+	y = 3.25 * GUI_GRID_H + GUI_GRID_Y;
+	w = 6 * GUI_GRID_W;
+	h = 1.5 * GUI_GRID_H;
+};
+class RscEdit_1400: RscEdit
+{
+	idc = 1400;
+
+	text = "Suspect Name"; //--- ToDo: Localize;
+	x = 6.15 * GUI_GRID_W + GUI_GRID_X;
+	y = 3.63 * GUI_GRID_H + GUI_GRID_Y;
+	w = 23.5 * GUI_GRID_W;
+	h = 1 * GUI_GRID_H;
+};
+class RscListbox_1500: RscListBoxHiddenWhite
+{
+	idc = 1500;
+
+	x = 2.5 * GUI_GRID_W + GUI_GRID_X;
+	y = 5.5 * GUI_GRID_H + GUI_GRID_Y;
+	w = 35 * GUI_GRID_W;
+	h = 13 * GUI_GRID_H;
+};
+////////////////////////////////////////////////////////
+// GUI EDITOR OUTPUT END
+////////////////////////////////////////////////////////
+
+
 };
 class AM_JailCell{
 	controls[]=
@@ -389,109 +398,76 @@ class AM_PrisonTimer {
 idd=-1;
 controls[]=
 {
-	IGUIBack_2200,
-	RscText_1000,
-	RscText_1001,
-	RscText_1002,
-	RscText_1003,
+	RscPicture_1200,
 	RscCombo_2100,
 	RscCombo_2101,
 	RscCombo_2102,
 	RscButton_1600,
 	RscButton_1601
-};
-////////////////////////////////////////////////////////
-// GUI EDITOR OUTPUT START (by DEADdem, v1.063, #Cyzuzy)
+};////////////////////////////////////////////////////////
+// GUI EDITOR OUTPUT START (by Jamie, v1.063, #Sagome)
 ////////////////////////////////////////////////////////
 
-class IGUIBack_2200: IGUIBack
+class RscPicture_1200: RscPicture
 {
-	idc = 2200;
-	x = 5 * GUI_GRID_W + GUI_GRID_X;
-	y = 4.5 * GUI_GRID_H + GUI_GRID_Y;
-	w = 31 * GUI_GRID_W;
-	h = 17.5 * GUI_GRID_H;
-};
-class RscText_1000: RscText
-{
-	idc = 1000;
-	text = "Suspect Prison Sentancing"; //--- ToDo: Localize;
-	x = 15 * GUI_GRID_W + GUI_GRID_X;
-	y = 5.5 * GUI_GRID_H + GUI_GRID_Y;
-	w = 11.5 * GUI_GRID_W;
-	h = 2 * GUI_GRID_H;
-};
-class RscText_1001: RscText
-{
-	idc = 1001;
-	text = "Minutes"; //--- ToDo: Localize;
-	x = 17 * GUI_GRID_W + GUI_GRID_X;
-	y = 7 * GUI_GRID_H + GUI_GRID_Y;
-	w = 4 * GUI_GRID_W;
-	h = 2.5 * GUI_GRID_H;
-};
-class RscText_1002: RscText
-{
-	idc = 1002;
-	text = "Hours"; //--- ToDo: Localize;
-	x = 28 * GUI_GRID_W + GUI_GRID_X;
-	y = 7 * GUI_GRID_H + GUI_GRID_Y;
-	w = 4 * GUI_GRID_W;
-	h = 2.5 * GUI_GRID_H;
-};
-class RscText_1003: RscText
-{
-	idc = 1003;
-	text = "Seconds"; //--- ToDo: Localize;
-	x = 7 * GUI_GRID_W + GUI_GRID_X;
-	y = 7 * GUI_GRID_H + GUI_GRID_Y;
-	w = 4 * GUI_GRID_W;
-	h = 2.5 * GUI_GRID_H;
+	idc = 1200;
+	text = "\ALRPG_Client\PD\PD_Sentencing.paa";
+	x = -1 * GUI_GRID_W + GUI_GRID_X;
+	y = -3.5 * GUI_GRID_H + GUI_GRID_Y;
+	w = 42 * GUI_GRID_W;
+	h = 31.5 * GUI_GRID_H;
 };
 class RscCombo_2100: RscCombo
 {
 	idc = 2100;
-	x = 7 * GUI_GRID_W + GUI_GRID_X;
-	y = 9 * GUI_GRID_H + GUI_GRID_Y;
-	w = 6 * GUI_GRID_W;
+
+	x = 3 * GUI_GRID_W + GUI_GRID_X;
+	y = 7.5 * GUI_GRID_H + GUI_GRID_Y;
+	w = 10 * GUI_GRID_W;
 	h = 1 * GUI_GRID_H;
 };
 class RscCombo_2101: RscCombo
 {
 	idc = 2101;
-	x = 17.5 * GUI_GRID_W + GUI_GRID_X;
-	y = 9 * GUI_GRID_H + GUI_GRID_Y;
-	w = 6 * GUI_GRID_W;
+
+	x = 3 * GUI_GRID_W + GUI_GRID_X;
+	y = 10.5 * GUI_GRID_H + GUI_GRID_Y;
+	w = 10 * GUI_GRID_W;
 	h = 1 * GUI_GRID_H;
 };
 class RscCombo_2102: RscCombo
 {
 	idc = 2102;
-	x = 28.5 * GUI_GRID_W + GUI_GRID_X;
-	y = 9 * GUI_GRID_H + GUI_GRID_Y;
-	w = 6 * GUI_GRID_W;
+
+	x = 3 * GUI_GRID_W + GUI_GRID_X;
+	y = 13.5 * GUI_GRID_H + GUI_GRID_Y;
+	w = 10 * GUI_GRID_W;
 	h = 1 * GUI_GRID_H;
 };
-class RscButton_1600: RscButton
+class RscButton_1600: RscButtonHidden
 {
 	idc = 1600;
-	text = "Add Time"; //--- ToDo: Localize;
-	x = 7 * GUI_GRID_W + GUI_GRID_X;
-	y = 12 * GUI_GRID_H + GUI_GRID_Y;
+	action = "[lbCurSel 2100,lbCurSel 2101,lbCurSel 2102] call AM_PD_AddJailTime;";
+
+	x = 9.95 * GUI_GRID_W + GUI_GRID_X;
+	y = 16.79 * GUI_GRID_H + GUI_GRID_Y;
 	w = 8.5 * GUI_GRID_W;
-	h = 2 * GUI_GRID_H;
-	action="[lbCurSel 2100,lbCurSel 2101,lbCurSel 2102] call AM_PD_AddJailTime;";
+	h = 1.5 * GUI_GRID_H;
 };
-class RscButton_1601: RscButton
+class RscButton_1601: RscButtonHidden
 {
 	idc = 1601;
-	text = "Remove Time"; //--- ToDo: Localize;
-	x = 26 * GUI_GRID_W + GUI_GRID_X;
-	y = 12 * GUI_GRID_H + GUI_GRID_Y;
+	action = "[lbCurSel 1200,lbCurSel 1201,lbCurSel 1202] call AM_PD_RemoveJailTime;";
+
+	x = 21.55 * GUI_GRID_W + GUI_GRID_X;
+	y = 16.83 * GUI_GRID_H + GUI_GRID_Y;
 	w = 8.5 * GUI_GRID_W;
-	h = 2 * GUI_GRID_H;
-	action="[lbCurSel 1200,lbCurSel 1201,lbCurSel 1202] call AM_PD_RemoveJailTime;";
+	h = 1.5 * GUI_GRID_H;
 };
+////////////////////////////////////////////////////////
+// GUI EDITOR OUTPUT END
+////////////////////////////////////////////////////////
+
 
 
 };
@@ -499,66 +475,67 @@ class AM_GunRack{
 idd=-1;
 controls[]=
 {
-	IGUIBack_2200,
+	RscPicture_1200,
 	RscListbox_1501,
 	RscListbox_1500,
 	RscButton_1600,
-	RscButton_1601,
-	RscText_1000
+	RscButton_1601
 };
-class IGUIBack_2200: IGUIBack
+////////////////////////////////////////////////////////
+// GUI EDITOR OUTPUT START (by Jamie, v1.063, #Ryhyka)
+////////////////////////////////////////////////////////
+
+class RscPicture_1200: RscPicture
 {
-	idc = 2200;
-	x = 7 * GUI_GRID_W + GUI_GRID_X;
-	y = 1 * GUI_GRID_H + GUI_GRID_Y;
-	w = 29 * GUI_GRID_W;
-	h = 23 * GUI_GRID_H;
+	idc = 1200;
+	text = "\ALRPG_Client\Menu_GunRack.paa";
+	x = -1 * GUI_GRID_W + GUI_GRID_X;
+	y = -3 * GUI_GRID_H + GUI_GRID_Y;
+	w = 42 * GUI_GRID_W;
+	h = 31.5 * GUI_GRID_H;
 };
-class RscListbox_1501: RscListbox
+class RscListbox_1501: RscListBoxHidden
 {
 	idc = 1501;
-	x = 8 * GUI_GRID_W + GUI_GRID_X;
-	y = 2 * GUI_GRID_H + GUI_GRID_Y;
-	w = 18 * GUI_GRID_W;
-	h = 11 * GUI_GRID_H;
+
+	x = 1 * GUI_GRID_W + GUI_GRID_X;
+	y = 3 * GUI_GRID_H + GUI_GRID_Y;
+	w = 29.5 * GUI_GRID_W;
+	h = 9.5 * GUI_GRID_H;
 };
-class RscListbox_1500: RscListbox
+class RscListbox_1500: RscListBoxHidden
 {
 	idc = 1500;
-	x = 8 * GUI_GRID_W + GUI_GRID_X;
+
+	x = 1 * GUI_GRID_W + GUI_GRID_X;
 	y = 14 * GUI_GRID_H + GUI_GRID_Y;
-	w = 18 * GUI_GRID_W;
-	h = 9 * GUI_GRID_H;
+	w = 29.5 * GUI_GRID_W;
+	h = 9.5 * GUI_GRID_H;
 };
-class RscButton_1600: RscButton
+class RscButton_1600: RscButtonHidden
 {
 	idc = 1600;
-	text = "Store Gun"; //--- ToDo: Localize;
-	x = 27 * GUI_GRID_W + GUI_GRID_X;
-	y = 14 * GUI_GRID_H + GUI_GRID_Y;
-	w = 8 * GUI_GRID_W;
-	h = 2 * GUI_GRID_H;
-	action="[lbCurSel 1500] call AM_PD_StoreGunRack";
+	action = "[lbCurSel 1500] call AM_PD_StoreGunRack";
+
+	x = 31.85 * GUI_GRID_W + GUI_GRID_X;
+	y = 2.33 * GUI_GRID_H + GUI_GRID_Y;
+	w = 7.5 * GUI_GRID_W;
+	h = 1.5 * GUI_GRID_H;
 };
-class RscButton_1601: RscButton
+class RscButton_1601: RscButtonHidden
 {
 	idc = 1601;
-	text = "Retreive Gun"; //--- ToDo: Localize;
-	x = 27 * GUI_GRID_W + GUI_GRID_X;
-	y = 11 * GUI_GRID_H + GUI_GRID_Y;
-	w = 8 * GUI_GRID_W;
-	h = 2 * GUI_GRID_H;
-	action="[lbCurSel 1501] call AM_PD_TakeGunRack";
+	action = "[lbCurSel 1501] call AM_PD_TakeGunRack";
+
+	x = 31.8 * GUI_GRID_W + GUI_GRID_X;
+	y = 4.21 * GUI_GRID_H + GUI_GRID_Y;
+	w = 7.5 * GUI_GRID_W;
+	h = 1.5 * GUI_GRID_H;
 };
-class RscText_1000: RscText
-{
-	idc = 1000;
-	text = "Gun Rack"; //--- ToDo: Localize;
-	x = 28.5 * GUI_GRID_W + GUI_GRID_X;
-	y = 1.5 * GUI_GRID_H + GUI_GRID_Y;
-	w = 4.5 * GUI_GRID_W;
-	h = 2 * GUI_GRID_H;
-};
+////////////////////////////////////////////////////////
+// GUI EDITOR OUTPUT END
+////////////////////////////////////////////////////////
+
 
 };
 class AM_PlateLookup{
@@ -566,77 +543,56 @@ class AM_PlateLookup{
 
 	controls[]=
 	{
-		IGUIBack_2200,
+		RscPicture_1200,
 		RscListbox_1500,
-		RscText_1000,
-		RscText_1001,
 		RscEdit_1400,
-		RscButton_1600,
-		RscButton_1601
+		RscButton_1600
 	};
-	class IGUIBack_2200: IGUIBack
-	{
-		idc = 2200;
-		x = 0 * GUI_GRID_W + GUI_GRID_X;
-		y = 0 * GUI_GRID_H + GUI_GRID_Y;
-		w = 40 * GUI_GRID_W;
-		h = 25 * GUI_GRID_H;
-	};
-	class RscListbox_1500: RscListbox
-	{
-		idc = 1500;
-		x = 1 * GUI_GRID_W + GUI_GRID_X;
-		y = 5 * GUI_GRID_H + GUI_GRID_Y;
-		w = 38 * GUI_GRID_W;
-		h = 15 * GUI_GRID_H;
-	};
-	class RscText_1000: RscText
-	{
-		idc = 1000;
-		text = "Police License Plate Data Lookup"; //--- ToDo: Localize;
-		x = 13 * GUI_GRID_W + GUI_GRID_X;
-		y = 0 * GUI_GRID_H + GUI_GRID_Y;
-		w = 16.5 * GUI_GRID_W;
-		h = 2 * GUI_GRID_H;
-	};
-	class RscText_1001: RscText
-	{
-		idc = 1001;
-		text = "Enter Plate:"; //--- ToDo: Localize;
-		x = 6 * GUI_GRID_W + GUI_GRID_X;
-		y = 2 * GUI_GRID_H + GUI_GRID_Y;
-		w = 6.5 * GUI_GRID_W;
-		h = 2 * GUI_GRID_H;
-	};
-	class RscEdit_1400: RscEdit
-	{
-		idc = 1400;
-		x = 13.5 * GUI_GRID_W + GUI_GRID_X;
-		y = 2 * GUI_GRID_H + GUI_GRID_Y;
-		w = 14 * GUI_GRID_W;
-		h = 2 * GUI_GRID_H;
-	};
-	class RscButton_1600: RscButton
-	{
-		idc = 1600;
-		text = "Run Search"; //--- ToDo: Localize;
-		x = 28 * GUI_GRID_W + GUI_GRID_X;
-		y = 2 * GUI_GRID_H + GUI_GRID_Y;
-		w = 10 * GUI_GRID_W;
-		h = 2 * GUI_GRID_H;
-		action="[ctrlText 1400] call AM_PD_FetchLicensePlateInfo";
-	};
-	class RscButton_1601: RscButton
-	{
-		idc = 1601;
-		text = "Close"; //--- ToDo: Localize;
-		x = 16 * GUI_GRID_W + GUI_GRID_X;
-		y = 21 * GUI_GRID_H + GUI_GRID_Y;
-		w = 12 * GUI_GRID_W;
-		h = 2 * GUI_GRID_H;
-		action="closeDialog 0";
+////////////////////////////////////////////////////////
+// GUI EDITOR OUTPUT START (by Jamie, v1.063, #Bafyju)
+////////////////////////////////////////////////////////
 
-	};
+class RscPicture_1200: RscPicture
+{
+	idc = 1200;
+	text = "\ALRPG_Client\PD\PD_Plate.paa";
+	x = -1 * GUI_GRID_W + GUI_GRID_X;
+	y = -3.5 * GUI_GRID_H + GUI_GRID_Y;
+	w = 42 * GUI_GRID_W;
+	h = 31.5 * GUI_GRID_H;
+};
+class RscListbox_1500: RscListBoxHiddenWhite
+{
+	idc = 1500;
+
+	x = 2.5 * GUI_GRID_W + GUI_GRID_X;
+	y = 6 * GUI_GRID_H + GUI_GRID_Y;
+	w = 35 * GUI_GRID_W;
+	h = 12.5 * GUI_GRID_H;
+};
+class RscEdit_1400: RscEdit
+{
+	idc = 1400;
+
+	x = 5.95 * GUI_GRID_W + GUI_GRID_X;
+	y = 3.58 * GUI_GRID_H + GUI_GRID_Y;
+	w = 23.5 * GUI_GRID_W;
+	h = 1 * GUI_GRID_H;
+};
+class RscButton_1600: RscButtonHidden
+{
+	idc = 1600;
+	action = "[ctrlText 1400] call AM_PD_FetchLicensePlateInfo";
+
+	x = 30.25 * GUI_GRID_W + GUI_GRID_X;
+	y = 3.25 * GUI_GRID_H + GUI_GRID_Y;
+	w = 6 * GUI_GRID_W;
+	h = 1.5 * GUI_GRID_H;
+};
+////////////////////////////////////////////////////////
+// GUI EDITOR OUTPUT END
+////////////////////////////////////////////////////////
+
 };
 class AM_PoliceMenu{
 	idd=-1;
@@ -820,108 +776,89 @@ class AM_WarrantsMenu{
 	onUnLoad = "[] call AM_PD_ClearVariables";
 	controls[]=
 	{
-		IGUIBack_2200,
-		RscFrame_1800,
-		RscText_1000,
+		RscPicture_1201,
 		RscEdit_1400,
 		RscButton_1600,
 		RscListbox_1500,
-		RscText_1001,
 		RscButton_1601,
 		RscButton_1602,
 		RscButton_1603
 	};
+////////////////////////////////////////////////////////
+// GUI EDITOR OUTPUT START (by Jamie, v1.063, #Judagy)
+////////////////////////////////////////////////////////
 
-	class IGUIBack_2200: IGUIBack
-	{
-		idc = 2200;
-		x = -2.5 * GUI_GRID_W + GUI_GRID_X;
-		y = -1 * GUI_GRID_H + GUI_GRID_Y;
-		w = 45 * GUI_GRID_W;
-		h = 27 * GUI_GRID_H;
-	};
-	class RscFrame_1800: RscFrame
-	{
-		idc = 1800;
-		x = -1.5 * GUI_GRID_W + GUI_GRID_X;
-		y = 2 * GUI_GRID_H + GUI_GRID_Y;
-		w = 12.5 * GUI_GRID_W;
-		h = 6.5 * GUI_GRID_H;
-	};
-	class RscText_1000: RscText
-	{
-		idc = 1000;
-		text = "Suspect Name"; //--- ToDo: Localize;
-		x = 1 * GUI_GRID_W + GUI_GRID_X;
-		y = 2 * GUI_GRID_H + GUI_GRID_Y;
-		w = 7.5 * GUI_GRID_W;
-		h = 2 * GUI_GRID_H;
-	};
-	class RscEdit_1400: RscEdit
-	{
-		idc = 1400;
-		x = -1 * GUI_GRID_W + GUI_GRID_X;
-		y = 4 * GUI_GRID_H + GUI_GRID_Y;
-		w = 11.5 * GUI_GRID_W;
-		h = 1.5 * GUI_GRID_H;
-	};
-	class RscButton_1600: RscButton
-	{
-		idc = 1600;
-		text = "Submit Search"; //--- ToDo: Localize;
-		x = 0 * GUI_GRID_W + GUI_GRID_X;
-		y = 6.5 * GUI_GRID_H + GUI_GRID_Y;
-		w = 9.5 * GUI_GRID_W;
-		h = 1.5 * GUI_GRID_H;
-		action="[ctrlText 1400] call AM_PD_GetWarrants";
-	};
-	class RscListbox_1500: RscListbox
-	{
-		idc = 1500;
-		x = 11.5 * GUI_GRID_W + GUI_GRID_X;
-		y = 2 * GUI_GRID_H + GUI_GRID_Y;
-		w = 27.5 * GUI_GRID_W;
-		h = 21 * GUI_GRID_H;
-	};
-	class RscText_1001: RscText
-	{
-		idc = 1001;
-		text = "Warrant Database Lookup System"; //--- ToDo: Localize;
-		x = 13.5 * GUI_GRID_W + GUI_GRID_X;
-		y = 0 * GUI_GRID_H + GUI_GRID_Y;
-		w = 15 * GUI_GRID_W;
-		h = 1.5 * GUI_GRID_H;
-	};
-	class RscButton_1601: RscButton
-	{
-		idc = 1601;
-		text = "View Warrant"; //--- ToDo: Localize;
-		x = 0.5 * GUI_GRID_W + GUI_GRID_X;
-		y = 15 * GUI_GRID_H + GUI_GRID_Y;
-		w = 10.5 * GUI_GRID_W;
-		h = 2 * GUI_GRID_H;
-		action="[lbCurSel 1500] call AM_PD_ViewWarrant;";
-	};
-	class RscButton_1602: RscButton
-	{
-		idc = 1602;
-		text = "Delete Warrant"; //--- ToDo: Localize;
-		x = 0.5 * GUI_GRID_W + GUI_GRID_X;
-		y = 18 * GUI_GRID_H + GUI_GRID_Y;
-		w = 10.5 * GUI_GRID_W;
-		h = 2 * GUI_GRID_H;
-		action="[lbCurSel 1500] call AM_PD_DeleteWarrant;";
-	};
-	class RscButton_1603: RscButton
-	{
-		idc = 1603;
-		text = "Edit Warrant"; //--- ToDo: Localize;
-		x = 0.5 * GUI_GRID_W + GUI_GRID_X;
-		y = 21 * GUI_GRID_H + GUI_GRID_Y;
-		w = 10.5 * GUI_GRID_W;
-		h = 2 * GUI_GRID_H;
-		action="[lbCurSel 1500] call AM_PD_EditWarrant;";
-	};
+class RscPicture_1201: RscPicture
+{
+	idc = 1201;
+	text = "\ALRPG_Client\PD\PD_WarrantLookup.paa";
+	x = -1 * GUI_GRID_W + GUI_GRID_X;
+	y = -3.5 * GUI_GRID_H + GUI_GRID_Y;
+	w = 42 * GUI_GRID_W;
+	h = 31.5 * GUI_GRID_H;
+};
+class RscEdit_1400: RscEdit
+{
+	idc = 1400;
+
+	x = 6 * GUI_GRID_W + GUI_GRID_X;
+	y = 3.58 * GUI_GRID_H + GUI_GRID_Y;
+	w = 23.5 * GUI_GRID_W;
+	h = 1 * GUI_GRID_H;
+};
+class RscButton_1600: RscButtonHidden
+{
+	idc = 1600;
+	action = "[ctrlText 1400] call AM_PD_GetWarrants";
+
+	x = 30.3 * GUI_GRID_W + GUI_GRID_X;
+	y = 3.33 * GUI_GRID_H + GUI_GRID_Y;
+	w = 6 * GUI_GRID_W;
+	h = 1.5 * GUI_GRID_H;
+};
+class RscListbox_1500: RscListBoxHiddenWhite
+{
+	idc = 1500;
+
+	x = 11.5 * GUI_GRID_W + GUI_GRID_X;
+	y = 6 * GUI_GRID_H + GUI_GRID_Y;
+	w = 26 * GUI_GRID_W;
+	h = 13 * GUI_GRID_H;
+};
+class RscButton_1601: RscButtonHidden
+{
+	idc = 1601;
+	action = "[lbCurSel 1500] call AM_PD_ViewWarrant;";
+
+	x = 3.15 * GUI_GRID_W + GUI_GRID_X;
+	y = 13.25 * GUI_GRID_H + GUI_GRID_Y;
+	w = 7 * GUI_GRID_W;
+	h = 1 * GUI_GRID_H;
+};
+class RscButton_1602: RscButtonHidden
+{
+	idc = 1602;
+	action = "[lbCurSel 1500] call AM_PD_DeleteWarrant;";
+
+	x = 3.26 * GUI_GRID_W + GUI_GRID_X;
+	y = 15.16 * GUI_GRID_H + GUI_GRID_Y;
+	w = 7 * GUI_GRID_W;
+	h = 1 * GUI_GRID_H;
+};
+class RscButton_1603: RscButtonHidden
+{
+	idc = 1603;
+	action = "[lbCurSel 1500] call AM_PD_EditWarrant;";
+
+	x = 3.18 * GUI_GRID_W + GUI_GRID_X;
+	y = 17.08 * GUI_GRID_H + GUI_GRID_Y;
+	w = 7 * GUI_GRID_W;
+	h = 1 * GUI_GRID_H;
+};
+////////////////////////////////////////////////////////
+// GUI EDITOR OUTPUT END
+////////////////////////////////////////////////////////
+
 };
 
 class AM_WarrantsSubmit{
@@ -929,140 +866,85 @@ class AM_WarrantsSubmit{
 	
 	controls[]=
 	{
-		IGUIBack_2200,
-		RscText_1000,
-		RscFrame_1800,
-		RscText_1001,
+		RscPicture_1200,
 		RscEdit_1400,
-		RscText_1002,
 		RscEdit_1401,
-		RscText_1003,
 		RscEdit_1402,
-		RscText_1004,
 		RscCombo_2100,
-		RscText_1005,
 		RscCombo_2101,
 		RscButton_1600
 	};
-	class IGUIBack_2200: IGUIBack
-	{
-		idc = 2200;
-		x = 0 * GUI_GRID_W + GUI_GRID_X;
-		y = 0 * GUI_GRID_H + GUI_GRID_Y;
-		w = 40 * GUI_GRID_W;
-		h = 25 * GUI_GRID_H;
-	};
-	class RscText_1000: RscText
-	{
-		idc = 1000;
-		text = "Warrant Database System Submission"; //--- ToDo: Localize;
-		x = 12.5 * GUI_GRID_W + GUI_GRID_X;
-		y = 0 * GUI_GRID_H + GUI_GRID_Y;
-		w = 17 * GUI_GRID_W;
-		h = 2.5 * GUI_GRID_H;
-	};
-	class RscFrame_1800: RscFrame
-	{
-		idc = 1800;
-		x = 1 * GUI_GRID_W + GUI_GRID_X;
-		y = 2 * GUI_GRID_H + GUI_GRID_Y;
-		w = 38 * GUI_GRID_W;
-		h = 22 * GUI_GRID_H;
-	};
-	class RscText_1001: RscText
-	{
-		idc = 1001;
-		text = "Warrant Suspect"; //--- ToDo: Localize;
-		x = 3 * GUI_GRID_W + GUI_GRID_X;
-		y = 2.5 * GUI_GRID_H + GUI_GRID_Y;
-		w = 10 * GUI_GRID_W;
-		h = 2 * GUI_GRID_H;
-	};
-	class RscEdit_1400: RscEdit
-	{
-		idc = 1400;
-		x = 3 * GUI_GRID_W + GUI_GRID_X;
-		y = 4.5 * GUI_GRID_H + GUI_GRID_Y;
-		w = 23 * GUI_GRID_W;
-		h = 1.5 * GUI_GRID_H;
-	};
-	class RscText_1002: RscText
-	{
-		idc = 1002;
-		text = "Warrant Reason"; //--- ToDo: Localize;
-		x = 3 * GUI_GRID_W + GUI_GRID_X;
-		y = 6.5 * GUI_GRID_H + GUI_GRID_Y;
-		w = 10 * GUI_GRID_W;
-		h = 2 * GUI_GRID_H;
-	};
-	class RscEdit_1401: RscEdit
-	{
-		idc = 1401;
-		x = 3 * GUI_GRID_W + GUI_GRID_X;
-		y = 8.5 * GUI_GRID_H + GUI_GRID_Y;
-		w = 23 * GUI_GRID_W;
-		h = 1.5 * GUI_GRID_H;
-	};
-	class RscText_1003: RscText
-	{
-		idc = 1003;
-		text = "Warrant Information"; //--- ToDo: Localize;
-		x = 3 * GUI_GRID_W + GUI_GRID_X;
-		y = 10.5 * GUI_GRID_H + GUI_GRID_Y;
-		w = 10 * GUI_GRID_W;
-		h = 2 * GUI_GRID_H;
-	};
-	class RscEdit_1402: RscEdit
-	{
-		idc = 1402;
-		x = 3 * GUI_GRID_W + GUI_GRID_X;
-		y = 12.5 * GUI_GRID_H + GUI_GRID_Y;
-		w = 23 * GUI_GRID_W;
-		h = 1.5 * GUI_GRID_H;
-	};
-	class RscText_1004: RscText
-	{
-		idc = 1004;
-		text = "Warrant Status"; //--- ToDo: Localize;
-		x = 3 * GUI_GRID_W + GUI_GRID_X;
-		y = 14.5 * GUI_GRID_H + GUI_GRID_Y;
-		w = 10 * GUI_GRID_W;
-		h = 2 * GUI_GRID_H;
-	};
-	class RscCombo_2100: RscCombo
-	{
-		idc = 2100;
-		x = 3 * GUI_GRID_W + GUI_GRID_X;
-		y = 16.5 * GUI_GRID_H + GUI_GRID_Y;
-		w = 10.5 * GUI_GRID_W;
-		h = 1.5 * GUI_GRID_H;
-	};
-	class RscText_1005: RscText
-	{
-		idc = 1005;
-		text = "Warrant Type"; //--- ToDo: Localize;
-		x = 25.5 * GUI_GRID_W + GUI_GRID_X;
-		y = 14.5 * GUI_GRID_H + GUI_GRID_Y;
-		w = 10 * GUI_GRID_W;
-		h = 2 * GUI_GRID_H;
-	};
-	class RscCombo_2101: RscCombo
-	{
-		idc = 2101;
-		x = 25.5 * GUI_GRID_W + GUI_GRID_X;
-		y = 16.5 * GUI_GRID_H + GUI_GRID_Y;
-		w = 10.5 * GUI_GRID_W;
-		h = 1.5 * GUI_GRID_H;
-	};
-	class RscButton_1600: RscButton
-	{
-		idc = 1600;
-		text = "Submit Warrant"; //--- ToDo: Localize;
-		x = 13.5 * GUI_GRID_W + GUI_GRID_X;
-		y = 21 * GUI_GRID_H + GUI_GRID_Y;
-		w = 12 * GUI_GRID_W;
-		h = 1.5 * GUI_GRID_H;
-		action="[ctrlText 1400,ctrlText 1401,ctrlText 1402,lbCurSel 2100,lbCurSel 2101] call AM_PD_SubmitWarrant;closeDialog 0;";
-	};
+////////////////////////////////////////////////////////
+// GUI EDITOR OUTPUT START (by Jamie, v1.063, #Fabozi)
+////////////////////////////////////////////////////////
+
+class RscPicture_1200: RscPicture
+{
+	idc = 1200;
+	text = "\ALRPG_Client\PD\PD_WarrantSubmit.paa";
+	x = -1 * GUI_GRID_W + GUI_GRID_X;
+	y = -3.5 * GUI_GRID_H + GUI_GRID_Y;
+	w = 42 * GUI_GRID_W;
+	h = 31.5 * GUI_GRID_H;
+};
+class RscEdit_1400: RscEdit
+{
+	idc = 1400;
+
+	x = 3 * GUI_GRID_W + GUI_GRID_X;
+	y = 7 * GUI_GRID_H + GUI_GRID_Y;
+	w = 34 * GUI_GRID_W;
+	h = 1 * GUI_GRID_H;
+};
+class RscEdit_1401: RscEdit
+{
+	idc = 1401;
+
+	x = 3 * GUI_GRID_W + GUI_GRID_X;
+	y = 9.29 * GUI_GRID_H + GUI_GRID_Y;
+	w = 34 * GUI_GRID_W;
+	h = 1 * GUI_GRID_H;
+};
+class RscEdit_1402: RscEdit
+{
+	idc = 1402;
+
+	x = 3.05 * GUI_GRID_W + GUI_GRID_X;
+	y = 11.75 * GUI_GRID_H + GUI_GRID_Y;
+	w = 34 * GUI_GRID_W;
+	h = 1 * GUI_GRID_H;
+};
+class RscCombo_2100: RscCombo
+{
+	idc = 2100;
+
+	x = 3 * GUI_GRID_W + GUI_GRID_X;
+	y = 14.5 * GUI_GRID_H + GUI_GRID_Y;
+	w = 16 * GUI_GRID_W;
+	h = 1 * GUI_GRID_H;
+};
+class RscCombo_2101: RscCombo
+{
+	idc = 2101;
+
+	x = 20 * GUI_GRID_W + GUI_GRID_X;
+	y = 14.5 * GUI_GRID_H + GUI_GRID_Y;
+	w = 17 * GUI_GRID_W;
+	h = 1 * GUI_GRID_H;
+};
+class RscButton_1600: RscButtonHidden
+{
+	idc = 1600;
+	action = "[ctrlText 1400,ctrlText 1401,ctrlText 1402,lbCurSel 2100,lbCurSel 2101] call AM_PD_SubmitWarrant;closeDialog 0;";
+
+	x = 15.65 * GUI_GRID_W + GUI_GRID_X;
+	y = 17 * GUI_GRID_H + GUI_GRID_Y;
+	w = 8.5 * GUI_GRID_W;
+	h = 1.5 * GUI_GRID_H;
+};
+////////////////////////////////////////////////////////
+// GUI EDITOR OUTPUT END
+////////////////////////////////////////////////////////
+
 
 }
