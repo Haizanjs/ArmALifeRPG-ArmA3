@@ -131,74 +131,62 @@ class AM_PolicePC {
 	idd=-1;
 	controls[]=
 	{
-		RscPicture_1200,
+		IGUIBack_2200,
 		RscButton_1600,
 		RscButton_1601,
 		RscButton_1602,
 		RscButton_1603
 	};
-////////////////////////////////////////////////////////
-// GUI EDITOR OUTPUT START (by Jamie, v1.063, #Doxumy)
-////////////////////////////////////////////////////////
 
-class RscButton_1600: RscButtonHidden
-{
-	idc = 1600;
-	action = "closeDialog 0;if(!createDialog 'AM_PlateLookup')exitWith{};";
+	class IGUIBack_2200: IGUIBack
+	{
+		idc = 2200;
+		x = 11 * GUI_GRID_W + GUI_GRID_X;
+		y = 2 * GUI_GRID_H + GUI_GRID_Y;
+		w = 19 * GUI_GRID_W;
+		h = 21.5 * GUI_GRID_H;
+	};
+	class RscButton_1600: RscButton
+	{
+		idc = 1600;
+		text = "Vehicle Database"; //--- ToDo: Localize;
+		x = 12 * GUI_GRID_W + GUI_GRID_X;
+		y = 3 * GUI_GRID_H + GUI_GRID_Y;
+		w = 17 * GUI_GRID_W;
+		h = 3 * GUI_GRID_H;
+		action="closeDialog 0;if(!createDialog ""AM_PlateLookup"")exitWith{};";
+	};
+	class RscButton_1601: RscButton
+	{
+		idc = 1601;
+		text = "Persons Database"; //--- ToDo: Localize;
+		x = 12 * GUI_GRID_W + GUI_GRID_X;
+		y = 7 * GUI_GRID_H + GUI_GRID_Y;
+		w = 17 * GUI_GRID_W;
+		h = 3 * GUI_GRID_H;
+		action="closeDialog 0;if(!createDialog ""AM_PoliceDB"")exitWith{};";
+	};
+	class RscButton_1602: RscButton
+	{
+		idc = 1602;
+		text = "Create Warrant"; //--- ToDo: Localize;
+		x = 12 * GUI_GRID_W + GUI_GRID_X;
+		y = 14 * GUI_GRID_H + GUI_GRID_Y;
+		w = 17 * GUI_GRID_W;
+		h = 3 * GUI_GRID_H;
+		action="closedialog 0; [] call AM_PD_OpenWarrantsSubmit;";
+	};
+	class RscButton_1603: RscButton
+	{
+		idc = 1603;
+		text = "Warrant Database"; //--- ToDo: Localize;
+		x = 12 * GUI_GRID_W + GUI_GRID_X;
+		y = 18 * GUI_GRID_H + GUI_GRID_Y;
+		w = 17 * GUI_GRID_W;
+		h = 3 * GUI_GRID_H;
+		action="closeDialog 0;if(!createDialog ""AM_WarrantsMenu"")exitWith{};";
 
-	x = 20.55 * GUI_GRID_W + GUI_GRID_X;
-	y = 5.37 * GUI_GRID_H + GUI_GRID_Y;
-	w = 13.5 * GUI_GRID_W;
-	h = 2.5 * GUI_GRID_H;
-	colorBackground[] = {0,0,0,0};
-};
-class RscButton_1601: RscButtonHidden
-{
-	idc = 1601;
-	action = "closeDialog 0;if(!createDialog 'AM_PoliceDB')exitWith{};";
-
-	x = 20.59 * GUI_GRID_W + GUI_GRID_X;
-	y = 8.55 * GUI_GRID_H + GUI_GRID_Y;
-	w = 13.5 * GUI_GRID_W;
-	h = 2.5 * GUI_GRID_H;
-	colorBackground[] = {0,0,0,0};
-};
-class RscButton_1602: RscButtonHidden
-{
-	idc = 1602;
-	action = "closedialog 0; [] call AM_PD_OpenWarrantsSubmit;";
-
-	x = 20.55 * GUI_GRID_W + GUI_GRID_X;
-	y = 14.54 * GUI_GRID_H + GUI_GRID_Y;
-	w = 13.5 * GUI_GRID_W;
-	h = 2.5 * GUI_GRID_H;
-	colorBackground[] = {0,0,0,0};
-};
-class RscButton_1603: RscButtonHidden
-{
-	idc = 1603;
-	action = "closeDialog 0;if(!createDialog 'AM_WarrantsMenu')exitWith{};";
-
-	x = 20.55 * GUI_GRID_W + GUI_GRID_X;
-	y = 11.45 * GUI_GRID_H + GUI_GRID_Y;
-	w = 13.5 * GUI_GRID_W;
-	h = 2.5 * GUI_GRID_H;
-	colorBackground[] = {0,0,0,0};
-};
-class RscPicture_1200: RscPicture
-{
-	idc = 1200;
-
-	text = "icons\Menu_Police.paa";
-	x = -1 * GUI_GRID_W + GUI_GRID_X;
-	y = -3.5 * GUI_GRID_H + GUI_GRID_Y;
-	w = 42 * GUI_GRID_W;
-	h = 31.5 * GUI_GRID_H;
-};
-////////////////////////////////////////////////////////
-// GUI EDITOR OUTPUT END
-////////////////////////////////////////////////////////
-
+	};
 
 };
 class AM_PoliceDB{

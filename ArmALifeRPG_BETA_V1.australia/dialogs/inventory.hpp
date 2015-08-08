@@ -1014,62 +1014,58 @@ class AM_VehicleStorage{
 	
 	controls[]=
 	{
-		RscPicture_1200,
+		IGUIBack_2200,
 		RscListbox_1500,
 		RscButton_1600,
-		RscButton_1601
+		RscButton_1601,
+		RscText_1000
 	};
-////////////////////////////////////////////////////////
-// GUI EDITOR OUTPUT START (by Jamie, v1.063, #Hifizy)
-////////////////////////////////////////////////////////
 
-class RscPicture_1200: RscPicture
-{
-	idc = 1200;
-
-	text = "icons\Menu_Garage.paa";
-	x = -1 * GUI_GRID_W + GUI_GRID_X;
-	y = -3 * GUI_GRID_H + GUI_GRID_Y;
-	w = 42 * GUI_GRID_W;
-	h = 31.5 * GUI_GRID_H;
-};
-class RscButton_1600: RscButtonHidden
-{
-	idc = 1600;
-	action = "[lbCurSel 1500] call AM_Core_RetreiveVehicle;";
-
-	x = 22.55 * GUI_GRID_W + GUI_GRID_X;
-	y = 22.29 * GUI_GRID_H + GUI_GRID_Y;
-	w = 7.5 * GUI_GRID_W;
-	h = 1.5 * GUI_GRID_H;
-	colorBackground[] = {0,0,0,0};
-};
-class RscButton_1601: RscButtonHidden
-{
-	idc = 1601;
-	action = "[lbCurSel 1500] call AM_Core_StoreVehicle;";
-
-	x = 31.8 * GUI_GRID_W + GUI_GRID_X;
-	y = 22.33 * GUI_GRID_H + GUI_GRID_Y;
-	w = 7.5 * GUI_GRID_W;
-	h = 1.5 * GUI_GRID_H;
-	colorBackground[] = {0,0,0,0};
-};
-class RscListbox_1500: RscListBoxHidden
-{
-	idc = 1500;
-
-	x = 1 * GUI_GRID_W + GUI_GRID_X;
-	y = 3 * GUI_GRID_H + GUI_GRID_Y;
-	w = 38 * GUI_GRID_W;
-	h = 18.5 * GUI_GRID_H;
-	colorText[] = {0,0,0,1};
-	colorBackground[] = {0,0,0,0};
-};
-////////////////////////////////////////////////////////
-// GUI EDITOR OUTPUT END
-////////////////////////////////////////////////////////
-
+	class IGUIBack_2200: IGUIBack
+	{
+		idc = 2200;
+		x = 0 * GUI_GRID_W + GUI_GRID_X;
+		y = 0 * GUI_GRID_H + GUI_GRID_Y;
+		w = 40 * GUI_GRID_W;
+		h = 25 * GUI_GRID_H;
+	};
+	class RscListbox_1500: RscListbox
+	{
+		idc = 1500;
+		x = 1 * GUI_GRID_W + GUI_GRID_X;
+		y = 2 * GUI_GRID_H + GUI_GRID_Y;
+		w = 38 * GUI_GRID_W;
+		h = 18 * GUI_GRID_H;
+	};
+	class RscButton_1600: RscButton
+	{
+		idc = 1600;
+		text = "Retreive Vehicle"; //--- ToDo: Localize;
+		x = 1 * GUI_GRID_W + GUI_GRID_X;
+		y = 21 * GUI_GRID_H + GUI_GRID_Y;
+		w = 10.5 * GUI_GRID_W;
+		h = 2 * GUI_GRID_H;
+		action="[lbCurSel 1500] call AM_Core_RetreiveVehicle;";
+	};
+	class RscButton_1601: RscButton
+	{
+		idc = 1601;
+		text = "Store Vehicle"; //--- ToDo: Localize;
+		x = 28.5 * GUI_GRID_W + GUI_GRID_X;
+		y = 21 * GUI_GRID_H + GUI_GRID_Y;
+		w = 10.5 * GUI_GRID_W;
+		h = 2 * GUI_GRID_H;
+		action="[lbCurSel 1500] call AM_Core_StoreVehicle;";
+	};
+	class RscText_1000: RscText
+	{
+		idc = 1000;
+		text = "Vehicle Storage Menu"; //--- ToDo: Localize;
+		x = 14.5 * GUI_GRID_W + GUI_GRID_X;
+		y = 0 * GUI_GRID_H + GUI_GRID_Y;
+		w = 10.5 * GUI_GRID_W;
+		h = 2 * GUI_GRID_H;
+	};
 
 };
 
@@ -1245,7 +1241,6 @@ class AM_Shop{
 	};
 };
 
-
 class AM_ATM{
 	idd=-1;
 
@@ -1258,71 +1253,60 @@ class AM_ATM{
 		RscEdit_1402,
 		RscButton_1600	
 	};
-////////////////////////////////////////////////////////
-// GUI EDITOR OUTPUT START (by Jamie, v1.063, #Kakevi)
-////////////////////////////////////////////////////////
+	class RscPicture_1200: RscPicture
+	{
+		idc = 1200;
+		text = "icons\bankpic.paa";
+		x = -6.5 * GUI_GRID_W + GUI_GRID_X;
+		y = -8 * GUI_GRID_H + GUI_GRID_Y;
+		w = 48.5 * GUI_GRID_W;
+		h = 39 * GUI_GRID_H;
+	};
+	class RscCombo_2100: RscEditHidden
+	{
+		idc = 2100;
 
-class RscPicture_1200: RscPicture
-{
-	idc = 1200;
+		x = 10 * GUI_GRID_W + GUI_GRID_X;
+		y = 3 * GUI_GRID_H + GUI_GRID_Y;
+		w = 16.5 * GUI_GRID_W;
+		h = 1.5 * GUI_GRID_H;
+	};
+	class RscEdit_1400: RscEditHidden
+	{
+		idc = 1400;
 
-	text = "icons\Menu_Bank.paa";
-	x = -1 * GUI_GRID_W + GUI_GRID_X;
-	y = -3.5 * GUI_GRID_H + GUI_GRID_Y;
-	w = 42 * GUI_GRID_W;
-	h = 31.5 * GUI_GRID_H;
-};
-class RscCombo_2100: RscCombo
-{
-	idc = 2100;
+		x = 12.5 * GUI_GRID_W + GUI_GRID_X;
+		y = 15.5 * GUI_GRID_H + GUI_GRID_Y;
+		w = 16.5 * GUI_GRID_W;
+		h = 1.5 * GUI_GRID_H;
+	};
+	class RscEdit_1401: RscEditHidden
+	{
+		idc = 1401;
 
-	x = 13 * GUI_GRID_W + GUI_GRID_X;
-	y = 7.5 * GUI_GRID_H + GUI_GRID_Y;
-	w = 18 * GUI_GRID_W;
-	h = 1 * GUI_GRID_H;
-};
-class RscEdit_1400: RscEdit
-{
-	idc = 1400;
+		x = 11.5 * GUI_GRID_W + GUI_GRID_X;
+		y = 13 * GUI_GRID_H + GUI_GRID_Y;
+		w = 14 * GUI_GRID_W;
+		h = 1.5 * GUI_GRID_H;
+	};
+	class RscEdit_1402: RscEditHidden
+	{
+		idc = 1402;
 
-	x = 15 * GUI_GRID_W + GUI_GRID_X;
-	y = 15.5 * GUI_GRID_H + GUI_GRID_Y;
-	w = 16 * GUI_GRID_W;
-	h = 1 * GUI_GRID_H;
-};
-class RscEdit_1401: RscEdit
-{
-	idc = 1401;
-
-	x = 14 * GUI_GRID_W + GUI_GRID_X;
-	y = 13.5 * GUI_GRID_H + GUI_GRID_Y;
-	w = 17 * GUI_GRID_W;
-	h = 1 * GUI_GRID_H;
-};
-class RscEdit_1402: RscEdit
-{
-	idc = 1402;
-
-	x = 14 * GUI_GRID_W + GUI_GRID_X;
-	y = 9 * GUI_GRID_H + GUI_GRID_Y;
-	w = 17 * GUI_GRID_W;
-	h = 1 * GUI_GRID_H;
-};
-class RscButton_1600: RscButtonHidden
-{
-	idc = 1600;
-	action = "[(ctrlText 1400),(ctrlText 1401),(ctrlText 1402),(lbCurSel 2100)] call AM_Core_ATMProcess";
-
-	x = 16.5 * GUI_GRID_W + GUI_GRID_X;
-	y = 18 * GUI_GRID_H + GUI_GRID_Y;
-	w = 7 * GUI_GRID_W;
-	h = 1.5 * GUI_GRID_H;
-	colorBackground[] = {0,0,0,0};
-};
-////////////////////////////////////////////////////////
-// GUI EDITOR OUTPUT END
-////////////////////////////////////////////////////////
-
+		x = 11.5 * GUI_GRID_W + GUI_GRID_X;
+		y = 7.5 * GUI_GRID_H + GUI_GRID_Y;
+		w = 15.5 * GUI_GRID_W;
+		h = 1.5 * GUI_GRID_H;
+	};
+	class RscButton_1600: RscButtonHidden
+	{
+		idc = 1600;
+		x = 14 * GUI_GRID_W + GUI_GRID_X;
+		y = 19 * GUI_GRID_H + GUI_GRID_Y;
+		w = 7.5 * GUI_GRID_W;
+		h = 1.5 * GUI_GRID_H;
+		action="[(ctrlText 1400),(ctrlText 1401),(ctrlText 1402),(lbCurSel 2100)] call AM_Core_ATMProcess";
+	};
 };
 	class AM_Gang {
 		idd = -1;
@@ -1495,3 +1479,55 @@ class AM_JobMarker
 		h = 12.5 * GUI_GRID_H;
 	};
 };
+class AddName
+{
+	idd = 1005;
+	class controls 
+	{
+		class BackgroundFrame: RscText
+		{
+			idc = 1000;
+			x = 0.402031 * safezoneW + safezoneX;
+			y = 0.346 * safezoneH + safezoneY;
+			w = 0.20625 * safezoneW;
+			h = 0.165 * safezoneH;
+			colorBackground[] = {0,0,0,0.6};
+		};
+		class CurrentNameDisplay: RscText
+		{
+			idc = 1001;
+			x = 0.407187 * safezoneW + safezoneX;
+			y = 0.357 * safezoneH + safezoneY;
+			w = 0.118594 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		class RscEdit_1400: RscEdit
+		{
+			idc = 1400;
+			x = 0.407187 * safezoneW + safezoneX;
+			y = 0.423 * safezoneH + safezoneY;
+			w = 0.0567187 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		class SaveButton: RscButton
+		{
+			idc = 1600;
+			text = "Save"; //--- ToDo: Localize;
+			x = 0.407187 * safezoneW + safezoneX;
+			y = 0.456 * safezoneH + safezoneY;
+			w = 0.0515625 * safezoneW;
+			h = 0.044 * safezoneH;
+			action = "[AM_InteractTarget] call AM_RememberPerson";
+		};
+		class RscText_1002: RscText
+		{
+			idc = 1002;
+			text = "New Name"; //--- ToDo: Localize;
+			x = 0.407187 * safezoneW + safezoneX;
+			y = 0.401 * safezoneH + safezoneY;
+			w = 0.0721875 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+	};
+};
+
