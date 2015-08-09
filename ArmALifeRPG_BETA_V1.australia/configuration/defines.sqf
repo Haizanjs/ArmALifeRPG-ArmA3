@@ -778,33 +778,48 @@ _exportImport = [
     "Whale_S",
     "Oil_P"
 ];
+
 _seedshop = [
     "tabacco_seeds"
 ];
+
 _SHcars = [
     "AM_94Civic_White",
     "AM_94Civic_Black",
     "AM_94Civic_Red"
 ];
+
 _BoatShop = ["B_Lifeboat"];
-_ARshop = ["B_Heli_Light_01_F"];
-_blackMR = ["cz75","16Rnd_9x19_cz","sw659","14Rnd_9x19_sw","mak","8Rnd_9x18_Mak","m1911","kimber","kimber_nw","7Rnd_45cal_m1911","m9","m9c","15Rnd_9x19_M9"];
+
+_ARshop =
+[
+"B_Heli_Light_01_F"
+];
+
+_blackMR = [
+    "cz75",
+    "16Rnd_9x19_cz",
+    "sw659",
+    "14Rnd_9x19_sw",
+    "mak",
+    "8Rnd_9x18_Mak",
+    "m1911","kimber",
+    "kimber_nw",
+    "7Rnd_45cal_m1911",
+    "m9",
+    "m9c",
+    "15Rnd_9x19_M9"
+];
+
 _recShop = [
-"AM_15Charger_P_P",
-"fn57",
-"20Rnd_57x28_FN",
-"26_cartridge",
-"Taser_26"
+    "AM_15Charger_P_P",
+    "fn57",
+    "20Rnd_57x28_FN",
+    "26_cartridge",
+    "Taser_26"
 ];
 
 
-_proCarz = [
-    "AM_08Commodore_Black",
-    "AM_08Commodore_Red",
-    "AM_08Commodore_White",
-    "AM_08Commodore_Green",
-    "AM_S331_Black"
-];
 if(!isMultiplayer)then{
     AM_CopRank = 9;
     AM_EMSRank = 6;
@@ -851,11 +866,169 @@ _fvendor = [
 	"Soda"
 ];
 
+_suburban = [
+    "AM_15SuburbanRed",
+    "AM_15SuburbanOrange",
+    "AM_15SuburbanYellow",
+    "AM_15SuburbanLightGreen",
+    "AM_15SuburbanGreen",
+    "AM_15SuburbanLightBlue",
+    "AM_15SuburbanBlue",
+    "AM_15SuburbanNavy",
+    "AM_15SuburbanFuchsia",
+    "AM_15SuburbanPink",
+    "AM_15SuburbanViolet",
+    "AM_15SuburbanBeige",
+    "AM_15SuburbanBrown",
+    "AM_15SuburbanGold",
+    "AM_15SuburbanSilver",
+    "AM_15SuburbanGrey",
+    "AM_15SuburbanCharcoal",
+    "AM_15SuburbanBlack",
+    "AM_15SuburbanCream",
+    "AM_15SuburbanWhite", 
+
+    "AM_Trailblazer_White",
+    "AM_Trailblazer_Silver",
+    "AM_Trailblazer_Grey",
+    "AM_Trailblazer_Black",
+    "AM_Trailblazer_Red",
+    "AM_Trailblazer_Yellow",
+    "AM_Trailblazer_Green",
+    "AM_Trailblazer_Blue",
+    "AM_Trailblazer_Pink",
+    "AM_Trailblazer_Orange",
+    "AM_Trailblazer_Purple"
+];
+
+_escalade = [
+    "AM_EscaladeRed",
+    "AM_EscaladeOrange",
+    "AM_EscaladeYellow",
+    "AM_EscaladeLightGreen",
+    "AM_EscaladeGreen",
+    "AM_EscaladeLightBlue",
+    "AM_EscaladeBlue",
+    "AM_EscaladeNavy",
+    "AM_EscaladeFuchsia",
+    "AM_EscaladePink",
+    "AM_EscaladeViolet",
+    "AM_EscaladeBeige",
+    "AM_EscaladeBrown",
+    "AM_EscaladeGold",
+    "AM_EscaladeSilver",
+    "AM_EscaladeGrey",
+    "AM_EscaladeCharcoal",
+    "AM_EscaladeBlack",
+    "AM_EscaladeCream",
+    "AM_EscaladeWhite"
+];
+
+_wrangler = [
+    "AM_WranglerRed",
+    "AM_WranglerOrange",
+    "AM_WranglerYellow",
+    "AM_WranglerLightGreen",
+    "AM_WranglerGreen",
+    "AM_WranglerLightBlue",
+    "AM_WranglerBlue",
+    "AM_WranglerNavy",
+    "AM_WranglerFuchsia",
+    "AM_WranglerPink",
+    "AM_WranglerViolet",
+    "AM_WranglerBeige",
+    "AM_WranglerBrown",
+    "AM_WranglerGold",
+    "AM_WranglerSilver",
+    "AM_WranglerGrey",
+    "AM_WranglerCharcoal",
+    "AM_WranglerBlack",
+    "AM_WranglerCream",
+    "AM_WranglerWhite"
+];
+
+_gtr = [
+    "AM_GTR_White",
+    "AM_GTR_Grey",
+    "AM_GTR_Black",
+    "AM_GTR_Red",
+    "AM_GTR_Orange",
+    "AM_GTR_Blue",
+    "AM_GTR_Green"
+];
+
+_dodge = [
+    "AM_15Charger_Black",
+    "AM_15Charger_Red",
+    "AM_15Charger_White",
+    "AM_15Charger_Green"
+];
+
+_saleen = [
+    "AM_S331_Black",
+    "AM_S331_White"
+];
+
+_honda = [
+    "AM_94Civic_White",
+    "AM_94Civic_Black",
+    "AM_94Civic_Red"
+];
+
+_holden = [
+    "AM_08Commodore_Black",     
+    "AM_08Commodore_White",     
+    "AM_08Commodore_Red",       
+    "AM_08Commodore_Green",
+    "AM_14Redline_White",       
+    "AM_14Redline_Red", 
+    "AM_14Redline_Black"
+];
+
+_landrover = [
+    "AM_LandRover_White",
+    "AM_LandRover_Silver",
+    "AM_LandRover_Grey",
+    "AM_LandRover_Black",
+    "AM_LandRover_Red",
+    "AM_LandRover_Orange",
+    "AM_LandRover_Yellow",
+    "AM_LandRover_Green",
+    "AM_LandRover_Blue",
+    "AM_LandRover_Pink",
+    "AM_LandRover_Purple"
+];
+
+_audi = [
+    "AM_Q7_White",
+    "AM_Q7_Silver",
+    "AM_Q7_Grey",
+    "AM_Q7_Black",
+    "AM_Q7_Red",
+    "AM_Q7_Orange",
+    "AM_Q7_Yellow",
+    "AM_Q7_Green",
+    "AM_Q7_Blue",
+    "AM_Q7_Pink",
+    "AM_Q7_Purple"
+];
+
+_bmw = [
+    "AM_X5_White",
+    "AM_X5_Silver",
+    "AM_X5_Black",
+    "AM_X5_Red",
+    "AM_X5_Orange",
+    "AM_X5_Yellow",
+    "AM_X5_Green",
+    "AM_X5_Blue"
+];
+
 AM_ShopsList = [
 
 // Shop class - [Shopname,buy,sell],[whitelist(not implemented)], object,gunspawn,carspawn
     //["recruit_shop", ["Police Recruit Shop", _recShop, _recShop], ["CAR"], pdcars, pdcarspawn, pdcars],
-    ["cop_kits", ["Police Kits",_cop_kits, _cop_kits], ["WEAP"],cop_weapon_spawn, cop_weapon_spawn, cop_weapon],
+    ["cop_kits", ["Police Kits",_cop_kits, _cop_kits], ["WEAP"],cop_kits, objNull, objNull],
     ["cop_cars", ["Police Cars",_copCars, _copCars], ["WEAP"],copcar_spawn, copcar_spawn, copcar_spawn],
     //EMS
     ["ems_air", ["E.M.S Air Unit Shop",_ems_air, _ems_air], ["CAR"],ems_spawn_air, ems_spawn_air, ems_spawn_air],  
@@ -867,24 +1040,37 @@ AM_ShopsList = [
     ["seeds_store", ["Seed Farm",_seedshop,_seedshop], ["WEAP"],seeds_store, objNull, objNull],
     ["pistol_store", ["Handgun Shop",_handgun,_handgun], ["WEAP"],pistol_store_spawn, pistol_store_spawn,objNull],
     ["gun_store_kamenka", ["Handgun Shop",_handgun,_handgun], ["WEAP"],gun_store_kamenka_spawn, gun_store_kamenka_spawn,objNull],
+
+
     //Car Store
-    ["pro_carz", ["Pro Carz", _proCarz, _proCarz], ["CAR"], pro_carz, procarz_spawn, procarz_spawn],
-    ["secondhand_cars_komorovo", ["Second-Hand Car Shop", _SHcars, _SHcars], ["CAR"], secondhand_cars_komorovo, secondhandcars_spawn_komorovo, secondhand_cars_komorovo],
+    ["chevy", ["Chevrolet Dealer", _suburban, _suburban], ["CAR"], chevy, chevy_spawn, chevy_spawn],
+    ["cadi", ["Cadilac Dealer", _escalade, _escalade], ["CAR"], cadi, cadi_spawn, cadi_spawn],
+    ["jeep", ["Jeep Dealer", _wrangler, _wrangler], ["CAR"], jeep, jeep_spawn, jeep_spawn],
+    ["nissan", ["Nissan Dealer", _gtr, _gtr], ["CAR"], nissan, nissan_spawn, nissan_spawn],
+    ["dodge", ["Dodge Dealer", _dodge, _dodge], ["CAR"], dodge, dodge_spawn, dodge_spawn],
+    ["saleen", ["Saleen Dealer", _saleen, _saleen], ["CAR"], saleen, saleen_spawn, saleen_spawn],
+    ["holden", ["Holden Dealer", _landrover, _landrover], ["CAR"], landrover, landrover_spawn, landrover_spawn],
+    ["landrover", ["Rangerover Dealer", _honda, _honda], ["CAR"], honda, honda_spawn, honda_spawn],
+    ["audi", ["Honda Dealer", _audi, _audi], ["CAR"], audi, audi_spawn, audi_spawn],
+    ["bmw", ["BMW Dealer", _bmw, _bmw], ["CAR"], bmw, bmw_spawn, bmw_spawn],
+    ["honda", ["Honda Dealer", _honda, _honda], ["CAR"], honda, honda_spawn, honda_spawn],
+
+
     //Black Market
     ["black_market", ["Black Market", _blackMR, _blackMR], ["WEAP"], black_market_spawn, black_market_spawn, black_market],
     //Boat Store
     ["boat_shop_balota", ["Boat Shop", _BoatShop, _BoatShop], ["CAR"], boat_shop_balota, boatspawn_balota, boat_shop_balota],
-    ["boat_shop_cherno", ["Boat Shop", _BoatShop, _BoatShop], ["CAR"], boat_shop_chenro, boatspawn_cherno, boat_shop_cherno],
+    ["boat_shop_cherno", ["Boat Shop", _BoatShop, _BoatShop], ["CAR"], boat_shop_cherno, boatspawn_cherno, boat_shop_cherno],
     //Air Shop
     ["airshop_NW", ["Air Shop", _ARshop, _ARshop], ["CAR"], airshop_NW, airshopspawn_NW, airshop_NW],
-    //General Store
     //Clothing Stores
     ["kamenka_gap", ["Kamenka Gap", _kGap,_kGap], ["CAR"], noSpawn, noSpawn, noSpawn],
     ["suitntie", ["Suit 'n Tie 'n Face", _suitNtie,_suitNtie], ["CAR"], noSpawn, noSpawn, noSpawn],
     ["dcmc", ["DC's Military Cosplay", _DCMCP,_DCMCP], ["CAR"], noSpawn, noSpawn, noSpawn],
     //Food vendors
     ["food_vendor", ["Murder King",_fvendor,_fvendor], ["ITEM"], objNull, objNull, food_vendor],
-
+    
+    //General Store
     ["gen_store_kamenka", ["General Store",_genStore,_genStore], ["ITEM"], objNull, objNull, gen_store_kamenka],
     ["gen_store_komarovo", ["General Store",_genStore,_genStore], ["ITEM"], objNull, objNull, gen_store_komarovo],
     ["gen_store_balota", ["General Store",_genStore,_genStore], ["ITEM"], objNull, objNull, gen_store_balota],

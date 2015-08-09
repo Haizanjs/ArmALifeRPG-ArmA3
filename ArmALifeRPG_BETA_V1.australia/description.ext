@@ -1,6 +1,7 @@
-author="DEADdem, Taliban, Kangaro0 and Idris";
+dev="Taliban, Kangaro0 and Idris";
+author="DEADdem";
 OnLoadName = "ArmALifeRPG.com";
-OnLoadMission = "Life Mission Script";
+OnLoadMission = "Arma Life RPG Life Mission";
 disabledAI = 1;
 enableDebugConsole = 1;
 joinUnassigned = 1;

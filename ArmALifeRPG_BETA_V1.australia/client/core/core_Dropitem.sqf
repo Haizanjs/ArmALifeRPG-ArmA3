@@ -23,11 +23,13 @@ AM_Core_DropItem = {
 	_itemModel = [_itemTyppe,"model"] call AM_Inventory_Info;
 	_itemName = [_itemTyppe, "name"] call AM_Inventory_Info;
 	AM_Droppingitem = true;
-	sleep 2;
 	_obj = _itemModel createVehicle position player;
 	_obj setVariable ["isAnItem",1,true];
 	_obj setVariable ["droparray", [_itemTyppe,_toDrop],true];
 	[_itemTyppe, -_toDrop] call AM_Inventory_AddItem;
 	[[_obj], "AM_network_pickupaction",true] call BIS_fnc_MP;
 	[format["You dropped %1 %2s",_toDrop,_itemName],AM_COLGROUP_GREEN] call AM_Core_Message;
+	AM_Droppingitem = false;
+	closeDialog 0;
+	[] call AM_Inventory_Open;
 };

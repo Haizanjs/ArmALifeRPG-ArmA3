@@ -289,8 +289,8 @@ class FSM
        "_tsChannelName = ([] call TFAR_fnc_GetTeamspeakChannelName);" \n
        "" \n
        "if(!(_tsChannelName == ""TaskForceRadio"")) then{" \n
-       "	player enableSimulation false;" \n
-       "	systemChat ""Task Force Radio not connected!"";" \n
+       "	" \n
+       "	"";" \n
        "}else{" \n
        "	player enableSimulation true;" \n
        "};"/*%FSM</STATEINIT""">*/;

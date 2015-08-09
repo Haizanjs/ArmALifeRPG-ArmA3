@@ -21,7 +21,14 @@ AM_Unflip ={
 AM_Unload = {
 	if(!(AM_InteractTarget in AM_SERVERVAR_CARS))exitWith{};
 	_target = AM_InteractTarget;
-	{
+	_players = nearestObjects[player,["Man"],5] select 0;
+		{
+			if (_target in AM_SERVERVAR_CARS || _players getvariable "AM_Cuffed") exitWith {
+				while{(_players getVariable "AM_Cuffed")}do{
+				[[_players,AM_ANIMSTATES_Cuffed],"AM_Core_Animate",true,true] call BIS_fnc_MP;	
+				sleep 16;
+			};
+		};
 		if (_target in AM_SERVERVAR_CARS) then {
 		moveOut _x;
 		};

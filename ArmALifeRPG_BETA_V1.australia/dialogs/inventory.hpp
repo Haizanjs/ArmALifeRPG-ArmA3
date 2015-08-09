@@ -1521,3 +1521,75 @@ class AM_JobMarker
 		h = 12.5 * GUI_GRID_H;
 	};
 };
+class AM_Shop_Cars{
+	idd=1001001;
+	onLoad = "AM_InShop=true";
+	onUnLoad = "AM_InShop=false";
+	controls[]=
+	{
+		IGUIBack_2200,
+		RscListbox_1500,
+		RscText_1000,
+		RscButton_1600,
+		RscButton_1601,
+		RscEdit_1400
+	};
+	class IGUIBack_2200: IGUIBack
+	{
+		idc = 2200;
+
+		x = -27.5 * GUI_GRID_W + GUI_GRID_X;
+		y = -5.5 * GUI_GRID_H + GUI_GRID_Y;
+		w = 32 * GUI_GRID_W;
+		h = 31.5 * GUI_GRID_H;
+	};
+	class RscListbox_1500: RscListBox
+	{
+		idc = 1500;
+
+		x = -26.5 * GUI_GRID_W + GUI_GRID_X;
+		y = -2 * GUI_GRID_H + GUI_GRID_Y;
+		w = 24.5 * GUI_GRID_W;
+		h = 23 * GUI_GRID_H;
+	};
+	class RscText_1000: RscText
+	{
+		idc = 1000;
+
+		text = "Car Shop"; //--- ToDo: Localize;
+		x = -26 * GUI_GRID_W + GUI_GRID_X;
+		y = -3.5 * GUI_GRID_H + GUI_GRID_Y;
+		w = 18 * GUI_GRID_W;
+		h = 1.5 * GUI_GRID_H;
+	};
+	class RscButton_1600: RscButton
+	{
+		idc = 1600;
+		action = "[lbCurSel 1500, ctrlText 1400] call AM_Shops_Buy;";
+
+		text = "Buy Item"; //--- ToDo: Localize;
+		x = -20.5 * GUI_GRID_W + GUI_GRID_X;
+		y = 22.5 * GUI_GRID_H + GUI_GRID_Y;
+		w = 11.5 * GUI_GRID_W;
+		h = 2 * GUI_GRID_H;
+	};
+	class RscButton_1601: RscButton
+	{
+		idc = 1601;
+		action = "[lbCurSel 1500] call AM_Shops_Preview;";
+		
+		text = "Preview"; //--- ToDo: Localize;
+		x = -7.5 * GUI_GRID_W + GUI_GRID_X;
+		y = -4.5 * GUI_GRID_H + GUI_GRID_Y;
+		w = 11.5 * GUI_GRID_W;
+		h = 2 * GUI_GRID_H;
+	};
+	class RscEdit_1400: RscEdit
+	{
+		idc = 1400;
+		x = -25.5 * GUI_GRID_W + GUI_GRID_X;
+		y = 22.5 * GUI_GRID_H + GUI_GRID_Y;
+		w = 4 * GUI_GRID_W;
+		h = 2 * GUI_GRID_H;
+	};
+};

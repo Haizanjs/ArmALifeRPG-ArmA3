@@ -634,17 +634,17 @@ class RscListBox
 	};
 	colorSelectBackground[] = 
 	{
-		0.95,
-		0.95,
-		0.95,
-		1
+		0,
+		0,
+		0,
+		0
 	};
 	colorSelectBackground2[] = 
 	{
-		1,
-		1,
-		1,
-		0.5
+		0,
+		0,
+		0,
+		0
 	};
 	colorBackground[] = 
 	{
@@ -996,7 +996,7 @@ class RscButtonHidden:RscButton{
 		1,
 		1,
 		1,
-		1
+		0
 	};
 	colorDisabled[] = 
 	{
@@ -1059,9 +1059,15 @@ class RscButtonHidden:RscButton{
 	};
 };
 
-
 class RscListBoxHidden:RscListBox{
 	colorText[] = {0,0,0,1};
+	colorSelect[] = 
+	{
+		0,
+		0,
+		1,
+		1
+	};
 	colorBackground[] = 
 	{
 		0,

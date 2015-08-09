@@ -112,7 +112,7 @@ AM_Items = [
 	["AM_09Tahoe_U_T", 0, ["AM_09Tahoe_U_T", "2009 Chevrolet Tahoe (Police Slickop)", 10], "police_auth", "nouse.sqf", ["CAR"],100,"ico_default.paa"],
 	["AM_15Charger_P_P", 0, ["AM_15Charger_P_P", "2015 Dodge Charger R/T (Police Patrol)", 10], "police_auth", "nouse.sqf", ["CAR"],100,"ico_default.paa"],
 	["AM_Ambulance_White", 0, ["AM_Ambulance_White", "Ford F350 Ambulance", 10], "ems_auth", "nouse.sqf", ["CAR"],100,"ico_default.paa"],
-	["AM_F350_P_P", 0, ["AM_F350_P_P", "2008 Ford F350 (Police Patrol)", 10], "police_auth", "nouse.sqf", ["CAR"],100,"ico_default.paa"],
+	//["AM_F350_P_P", 0, ["AM_F350_P_P", "2008 Ford F350 (Police Patrol)", 10], "police_auth", "nouse.sqf", ["CAR"],100,"ico_default.paa"],
 	["AM_08Commodore_P_P", 0, ["AM_Commodore_P_P", "2008 Holden Commodore (Highway Patrol)", 10], "police_auth", "nouse.sqf", ["CAR"],100,"ico_default.paa"],
 	["AM_14Redline_P_P", 0, ["AM_14Redline_P_P", "2014 Holden Commodore Evoke (Highway Patrol)", 10], "police_auth", "nouse.sqf", ["CAR"],100,"ico_default.paa"],
 	//["AM_Explorer_Police", 0, ["AM_Explorer_Police", "2014 Ford Explorer PPV", 25000], "drivers", "nouse.sqf", ["CAR"],200],
@@ -157,15 +157,82 @@ AM_Items = [
 	["AM_X5_Blue", 0, ["AM_X5_Blue", "AM X5 Blue", 18000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
 
 
-	["AM_Sexcalade_White", 0, ["AM_Sexcalade_White", "Escalade White", 18000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
-	["AM_Sexcalade_Silver", 0, ["AM_Sexcalade_Silver", "Escalade Silver", 18000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
-	["AM_Sexcalade_Black", 0, ["AM_Sexcalade_Black", "Escalade Black", 18000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
-	["AM_Sexcalade_Red", 0, ["AM_Sexcalade_Red", "Escalade Red", 18000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
-	["AM_Sexcalade_Orange", 0, ["AM_Sexcalade_Orange", "Escalade Orange", 18000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
-	["AM_Sexcalade_Yellow", 0, ["AM_Sexcalade_Yellow", "Escalade Yellow", 18000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
-	["AM_Sexcalade_Green", 0, ["AM_Sexcalade_Green", "Escalade Green", 18000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
-	["AM_Sexcalade_Blue", 0, ["AM_Sexcalade_Blue", "Escalade Blue", 18000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
-	["AM_Sexcalade_Purple", 0, ["AM_Sexcalade_Purple", "Escalade Purple", 18000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	//Suburban
+	["AM_15SuburbanRed", 0, ["AM_15SuburbanRed", "2015 Suburban Red", 52000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_15SuburbanOrange", 0, ["AM_15SuburbanOrange", "2015 Suburban Orange", 52000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_15SuburbanYellow", 0, ["AM_15SuburbanYellow", "2015 Suburban Yellow", 52000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_15SuburbanLightGreen", 0, ["AM_15SuburbanLightGreen", "2015 Suburban Light Green", 52000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_15SuburbanGreen", 0, ["AM_15SuburbanGreen", "2015 Suburban Green", 52000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_15SuburbanLightBlue", 0, ["AM_15SuburbanLightBlue", "2015 Suburban Light Blue", 52000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_15SuburbanBlue", 0, ["AM_15SuburbanBlue", "2015 Suburban Blue", 52000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_15SuburbanNavy", 0, ["AM_15SuburbanNavy", "2015 Suburban Navy", 52000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_15SuburbanFuchsia", 0, ["AM_15SuburbanFuchsia", "2015 Suburban Fuchsia", 52000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_15SuburbanPink", 0, ["AM_15SuburbanPink", "2015 Suburban Pink", 52000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_15SuburbanViolet", 0, ["AM_15SuburbanViolet", "2015 Suburban Violet", 52000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_15SuburbanBeige", 0, ["AM_15SuburbanBeige", "2015 Suburban Beige", 52000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_15SuburbanBrown", 0, ["AM_15SuburbanBrown", "2015 Suburban Brown", 52000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_15SuburbanGold", 0, ["AM_15SuburbanGold", "2015 Suburban Gold", 52000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_15SuburbanSilver", 0, ["AM_15SuburbanSilver", "2015 Suburban Silver", 52000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_15SuburbanGrey", 0, ["AM_15SuburbanGrey", "2015 Suburban Grey", 52000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_15SuburbanCharcoal", 0, ["AM_15SuburbanCharcoal", "2015 Suburban Charcoal", 52000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_15SuburbanBlack", 0, ["AM_15SuburbanBlack", "2015 Suburban Black", 52000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_15SuburbanCream", 0, ["AM_15SuburbanCream", "2015 Suburban Cream", 52000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_15SuburbanWhite", 0, ["AM_15SuburbanWhite", "2015 Suburban White", 52000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_15SuburbanCustom", 0, ["AM_15SuburbanCustom", "2015 Suburban Custom", 52000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_15SuburbanCustomBYOD", 0, ["AM_15SuburbanCustomBYOD", "2015 Suburban Custom", 52000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+
+
+
+
+	//Escalade
+	["AM_EscaladeRed", 0, ["AM_EscaladeRed", "2012 Escalade Red", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_EscaladeOrange", 0, ["AM_EscaladeOrange", "2012 Escalade Orange", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_EscaladeYellow", 0, ["AM_EscaladeYellow", "2012 Escalade Yellow", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_EscaladeLightGreen", 0, ["AM_EscaladeLightGreen", "2012 Escalade Light Green", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_EscaladeGreen", 0, ["AM_EscaladeGreen", "2012 Escalade Green", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_EscaladeLightBlue", 0, ["AM_EscaladeLightBlue", "2012 Escalade Light Blue", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_EscaladeBlue", 0, ["AM_EscaladeBlue", "2012 Escalade Blue", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_EscaladeNavy", 0, ["AM_EscaladeNavy", "2012 Escalade Navy", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_EscaladeFuchsia", 0, ["AM_EscaladeFuchsia", "2012 Escalade Fuchsia", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_EscaladePink", 0, ["AM_EscaladePink", "2012 Escalade Pink", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_EscaladeViolet", 0, ["AM_EscaladeViolet", "2012 Escalade Violet", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_EscaladeBeige", 0, ["AM_EscaladeBeige", "2012 Escalade Beige", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_EscaladeBrown", 0, ["AM_EscaladeBrown", "2012 Escalade Brown", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_EscaladeGold", 0, ["AM_EscaladeGold", "2012 Escalade Gold", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_EscaladeSilver", 0, ["AM_EscaladeSilver", "2012 Escalade Silver", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_EscaladeGrey", 0, ["AM_EscaladeGrey", "2012 Escalade Grey", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_EscaladeCharcoal", 0, ["AM_EscaladeCharcoal", "2012 Escalade Charcoal", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_EscaladeBlack", 0, ["AM_EscaladeBlack", "2012 Escalade Black", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_EscaladeCream", 0, ["AM_EscaladeCream", "2012 Escalade Cream", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_EscaladeWhite", 0, ["AM_EscaladeWhite", "2012 Escalade White", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_EscaladeCustom", 0, ["AM_EscaladeCustom", "2012 Escalade Custom", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_EscaladeCustomBYOD", 0, ["AM_EscaladeCustomBYOD", "2012 Escalade Custom", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+
+
+
+	//Wrangler
+	["AM_WranglerRed", 0, ["AM_WranglerRed", "2011 Wrangler Red", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_WranglerOrange", 0, ["AM_WranglerOrange", "2011 Wrangler Orange", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_WranglerYellow", 0, ["AM_WranglerYellow", "2011 Wrangler Yellow", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_WranglerLightGreen", 0, ["AM_WranglerLightGreen", "2011 Wrangler Light Green", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_WranglerGreen", 0, ["AM_WranglerGreen", "2011 Wrangler Green", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_WranglerLightBlue", 0, ["AM_WranglerLightBlue", "2011 Wrangler Light Blue", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_WranglerBlue", 0, ["AM_WranglerBlue", "2011 Wrangler Blue", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_WranglerNavy", 0, ["AM_WranglerNavy", "2011 Wrangler Navy", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_WranglerFuchsia", 0, ["AM_WranglerFuchsia", "2011 Wrangler Fuchsia", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_WranglerPink", 0, ["AM_WranglerPink", "2011 Wrangler Pink", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_WranglerViolet", 0, ["AM_WranglerViolet", "2011 Wrangler Violet", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_WranglerBeige", 0, ["AM_WranglerBeige", "2011 Wrangler Beige", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_WranglerBrown", 0, ["AM_WranglerBrown", "2011 Wrangler Brown", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_WranglerGold", 0, ["AM_WranglerGold", "2011 Wrangler Gold", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_WranglerSilver", 0, ["AM_WranglerSilver", "2011 Wrangler Silver", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_WranglerGrey", 0, ["AM_WranglerGrey", "2011 Wrangler Grey", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_WranglerCharcoal", 0, ["AM_WranglerCharcoal", "2011 Wrangler Charcoal", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_WranglerBlack", 0, ["AM_WranglerBlack", "2011 Wrangler Black", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_WranglerCream", 0, ["AM_WranglerCream", "2011 Wrangler Cream", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_WranglerWhite", 0, ["AM_WranglerWhite", "2011 Wrangler White", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_WranglerCustom", 0, ["AM_WranglerCustom", "2011 Wrangler Custom", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
+	["AM_WranglerCustomBYOD", 0, ["AM_WranglerCustomBYOD", "2011 Wrangler Custom", 40000], "drivers", "nouse.sqf", ["CAR"],70,"ico_default.paa"],
 
 
 	["AM_GTR_White", 0, ["AM_GTR_White", "GTR White", 18000], "drivers", "nouse.sqf", ["CAR"],70],
@@ -209,7 +276,6 @@ AM_Items = [
 	["AM_Trailblazer_Blue", 0, ["AM_Trailblazer_Blue", "Chevrolet Trailblazer (Blue)", 12000], "drivers", "nouse.sqf", ["CAR"],70],
 	["AM_Trailblazer_Pink", 0, ["AM_Trailblazer_Pink", "Chevrolet Trailblazer (Pink)", 12000], "drivers", "nouse.sqf", ["CAR"],70],
 	["AM_Trailblazer_Orange", 0, ["AM_Trailblazer_Orange", "Chevrolet Trailblazer (Orange)", 12000], "drivers", "nouse.sqf", ["CAR"],70],
-
 	["AM_Trailblazer_Purple", 0, ["AM_Trailblazer_Purple", "Chevrolet Trailblazer (Purple)", 12000], "drivers", "nouse.sqf", ["CAR"],70],
     
     ["AM_S331_Black", 0, ["ALR_S331_Black","S331 Black", 16000], "drivers", "nouse.sqf", ["CAR"],120],
@@ -227,7 +293,9 @@ AM_Items = [
 
 	["AM_14Redline_White", 0, ["AM_14Redline_White","2014 Holden VF Commodore Evoke (White)", 32500], "drivers", "nouse.sqf", ["CAR"],50],		
 	["AM_14Redline_Red", 0, ["AM_14Redline_Red","2014 Holden VF Commodore Evoke (Red)", 32500], "drivers", "nouse.sqf", ["CAR"],50],		
-	["AM_14Redline_Black", 0, ["AM_14Redline_Black","2014 Holden  VF Commodore Evoke (Black)", 32500], "drivers", "nouse.sqf", ["CAR"],50],		
+	["AM_14Redline_Black", 0, ["AM_14Redline_Black","2014 Holden  VF Commodore Evoke (Black)", 32500], "drivers", "nouse.sqf", ["CAR"],50],	
+
+
 	//Boats
 	["B_Lifeboat", 0, ["B_Lifeboat", "Orange Boat", 600], "boat", "nouse.sqf", ["CAR"],50],
 	//EMS

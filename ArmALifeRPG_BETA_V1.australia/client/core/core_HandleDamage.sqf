@@ -32,7 +32,7 @@ private ["_unit","_shooter"];
 _unit = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
 _shooter = [_this,1,Objnull,[Objnull]] call BIS_fnc_param;
 _myGuns = "groundWeaponHolder" createVehicle getpos player;
-    if(_shooter isKindOf "Man" && alive player) then
+    if(_shooter isKindOf "Man") then
     {
         {
             _myGuns addWeaponCargoGlobal [_x,1];
@@ -40,15 +40,10 @@ _myGuns = "groundWeaponHolder" createVehicle getpos player;
         _unit allowdamage false;
         [[_unit,AM_ANIMSTATES_DEAD],"AM_Core_Animate",true] call BIS_fnc_MP;
         _unit setVariable ["AM_Disabled",true,true];
-        disableUserInput true;
-        titleText ["You have been tased!","BLACK"];
-        sleep 5;
+        [] spawn {
+            sleep 5;
+            call AM_Core_RagDoll;
+        };
         _unit allowdamage true;
-        disableUserInput false;
-        [[_unit,""],"AM_Core_Animate",true] call BIS_fnc_MP;
-        _unit setVariable ["AM_Disabled",false,true];
-        titleText ["","PLAIN"];
-        player setvariable ["Pain",false,true];
-        player setvariable ["ACE_isUnconscious",false,true];
     };
 };

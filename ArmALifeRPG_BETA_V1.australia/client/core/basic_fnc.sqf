@@ -42,6 +42,7 @@ AM_COREFILES = [
 	["AM_Inventory_AddWeapon","client\inv\inv_AddWeapon.sqf"],
 	["AM_Inventory_AddItemAction","client\inv\inv_AddItemAction.sqf"],
 	["AM_Inventory_NoteAdd","client\inv\inv_noteAdd.sqf"],
+	["AM_Inventory_GiveItem","client\inv\inv_give.sqf"],
 
 
 	["AM_Shops_Buy","client\shop\shops_Buy.sqf"],
@@ -120,10 +121,11 @@ AM_COREFILES = [
 	["AM_Core_Mining", "client\core\Core_Mining.sqf"],
 	["AM_Core_Housing", "client\core\Core_House.sqf"],
 	["AM_Core_House", "client\core\Core_House.sqf"],
-	["AM_Core_Skil", "client\core\Core_Skill.sqf"],
+	["AM_Core_Skill", "client\core\Core_Skill.sqf"],
 	["AM_Core_BuildingID", "client\core\Core_BuildingID.sqf"],
 	["AM_Core_Interaction", "client\core\Core_Interaction.sqf"],
 	["AM_Core_ReformatInventory", "client\core\Core_ReformatInventory.sqf"],
+	["AM_Core_Preview", "client\core\Core_Preview.sqf"],
 
 	["AM_Housing_Menu", "client\housing\house_menu.sqf"],
 	["AM_HUD_UIRadar","client\hud\hud_UIRadar.sqf"],
@@ -138,6 +140,7 @@ AM_COREFILES = [
 	["AM_network_ReceiveHouse","client\network\network_ReceiveHouseRequest.sqf"],
 	["AM_network_ReceiveStats.sqf","client\network\network_ReceiveStats.sqf"],
 	["AM_network_ReceiveTransfer","client\network\network_ReceiveTransfer.sqf"],
+	["AM_network_ReceiveItem","client\network\network_ReceiveItem.sqf"],
 	["AM_network_ReceiveWarrants","client\network\network_ReceiveWarrants.sqf"],
 	["AM_network_RetreiveVehicle","client\network\network_RetreiveVehicle.sqf"],
 	["AM_network_SetupSession","client\network\network_SetupSession.sqf"],
@@ -155,12 +158,12 @@ _fnCount = 0;
 	_handle = [] execVM _fnFile;
 	waitUntil {scriptDone _handle};
 	_fnCount = _fnCount + 1;
-	titleText [format["Loading Function (%1)",_fnName], "BLACK"];
-	cutText ["","Plain"];
-	titleText ["Functions Loaded","BLACK"];
+	titleText [format["Loading Function (%1)",_fnName], "PLAIN"];
 }forEach AM_COREFILES;
 waitUntil {_fnCount == (count AM_COREFILES)};
 [format["Loaded %1 Functions in %2sec",(count AM_COREFILES),(time - _timeStarted)], AM_COLGROUP_WHITE] call AM_Core_message;
+sleep 1;
+titleText ["Functions Loaded","BLACK"];
 AM_CORE_COMPLETE = true;
 [] spawn AM_Core_SpeedCamHandler;
 //call AM_Core_GetLogin;

@@ -35,7 +35,7 @@ AM_Core_ATMProcess = {
 
 		if(_transfer > AM_BankCash) exitWith {["You are trying to transfer too much money! You do not have that much!",AM_COLGROUP_RED] call AM_Core_Message;};
 		AM_BankCash = AM_BankCash - _transfer;	
-		[[_transfer, player], "AM_network_receivetransfer",owner _client] call BIS_fnc_MP;
+		[[_transfer, player], "AM_network_receivetransfer",owner _client] spawn BIS_fnc_MP;
 		[format["You sent $%1 to %2",_transfer,name _client],AM_COLGROUP_GREEN] call AM_Core_Message;
 	};	
 };
