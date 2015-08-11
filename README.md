@@ -1,5 +1,3 @@
-# ArmALifeRPG-ArmA3
+ArmA Life RPG Framework has been developed by DEADdem, Kangaro0 and Kunta Knite. This contains the Beta 3.0 release of ArmA Life RPG and ongoing development changes. 
 
-This is ArmA Life RPG server-side code. Please remember to label all commits with meaningful commit names and please provide a short description of changes. Remember to use ethical commit names, we had an issue last time with that.
-
-ReadME Updated 8/4/2015 by EagleScoped
+The ArmA Life RPG Framework is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. http://creativecommons.org/licenses/by-nc-nd/4.0/
